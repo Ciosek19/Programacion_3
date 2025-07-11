@@ -84,7 +84,7 @@ BEGIN
 	CREATE TABLE Usuario (
 		Id INT PRIMARY KEY IDENTITY,
 		PersonaID INT NOT NULL UNIQUE,
-		NombreUsuario NVARCHAR(50) NOT NULL,
+		NombreUsuario NVARCHAR(50) NOT NULL UNIQUE,
 		Email NVARCHAR(100) NOT NULL UNIQUE,
 		Clave NVARCHAR(255) NOT NULL,
 		Silenciado BIT NOT NULL DEFAULT 0,
@@ -122,8 +122,7 @@ BEGIN
         Id INT PRIMARY KEY IDENTITY,
         Nombre NVARCHAR(50) NOT NULL,
         ImagenUrl NVARCHAR(500),
-        Descripcion NVARCHAR(MAX),
-		Duracion TIME NOT NULL
+        Descripcion NVARCHAR(MAX)
     );
 END
 GO
@@ -133,7 +132,7 @@ BEGIN
     CREATE TABLE Programacion(
         Id INT PRIMARY KEY IDENTITY,
         ProgramaID INT NOT NULL,
-        FechaHorario DATETIME NOT NULL,
+        FechaHorario DATETIME,
         FOREIGN KEY (ProgramaID) REFERENCES ProgramaRadio(Id)
     );
 END
@@ -158,7 +157,7 @@ BEGIN
         Nombre NVARCHAR(50) NOT NULL,
         Descripcion NVARCHAR(MAX),
         TransmisionDiaria INT,
-		UrlImagen NVARCHAR(255)
+        UrlImagen NVARCHAR(255)
     );
 END
 GO
@@ -301,17 +300,15 @@ INSERT INTO Conductor (PersonaID, Biografia) VALUES
 (20, 'Fernando Silva es un conductor veterano con amplia audiencia.');
 GO
 -- Tabla ProgramaRadio
-INSERT INTO ProgramaRadio (Nombre, ImagenUrl, Descripcion, Duracion) VALUES
-('Mañanas Vibrantes', NULL, 'Un programa matutino lleno de energía, noticias y buena música para empezar el día.', '01:30:00'),
-('Tardes de Jazz', NULL, 'Selección especial de jazz clásico y contemporáneo para acompañar tus tardes.', '02:00:00'),
-('Noticias al Instante', NULL, 'Actualidad y análisis de las noticias más relevantes del día.', '01:00:00'),
-('Hora de Rock', NULL, 'Lo mejor del rock nacional e internacional con entrevistas exclusivas.', '01:45:00'),
-('Cultura y Letras', NULL, 'Espacio dedicado a la literatura, el arte y la cultura en general.', '01:15:00'),
-('Deportes en Vivo', NULL, 'Cobertura y debate de los eventos deportivos más importantes.', '02:30:00'),
-('Tecnología Hoy', NULL, 'Novedades y tendencias tecnológicas explicadas para todos.', '01:20:00'),
-('Noche de Nostalgia', NULL, 'Música de todas las épocas para revivir grandes recuerdos en la noche.', '03:00:00');
-GO
-
+INSERT INTO ProgramaRadio (Nombre, ImagenUrl, Descripcion) VALUES
+('Mañanas Vibrantes', '/Assets/Imagenes/4764773.jpg', 'Un programa matutino lleno de energía, noticias y buena música para empezar el día.'),
+('Tardes de Jazz', '/Assets/Imagenes/RadioJazz.jfif', 'Selección especial de jazz clásico y contemporáneo para acompañar tus tardes.'),
+('Noticias al Instante', '/Assets/Imagenes/RadioNoticias.jfif', 'Actualidad y análisis de las noticias más relevantes del día.'),
+('Hora de Rock', '/Assets/Imagenes/RadioRock.jfif', 'Lo mejor del rock nacional e internacional con entrevistas exclusivas.'),
+('Cultura y Letras', '/Assets/Imagenes/RadioCultura. _ Free…', 'Espacio dedicado a la literatura, el arte y la cultura en general.'),
+('Deportes en Vivo', '/Assets/Imagenes/RadioDeportes.jfif', 'Cobertura y debate de los eventos deportivos más importantes.'),
+('Tecnología Hoy', '/Assets/Imagenes/RadioTecnologia.jfif', 'Novedades y tendencias tecnológicas explicadas para todos.'),
+('Noche de Nostalgia', '/Assets/Imagenes/RadioNostalgia.jfif', 'Música de todas las épocas para revivir grandes recuerdos en la noche.');
 GO
 -- Tabla Programacion
 -- Programación semanal de programas de radio
@@ -413,56 +410,69 @@ INSERT INTO ConductorProgramaRadio (ConductorID, ProgramaID) VALUES
 (3, 8);  -- Isabel Pérez
 GO
 -- Tabla Patrocinador
-INSERT INTO Patrocinador (Nombre, Descripcion, TransmisionDiaria) VALUES
-('Café Amanecer', 'Café artesanal que acompaña tus mañanas con el mejor sabor.', 5),
-('TecnoMundo', 'Tu tienda de tecnología con las últimas novedades en electrónica.', 3),
-('Viajes Solaris', 'Agencia de turismo que te lleva a conocer el mundo.', 4),
-('Agua Cristalina', 'Agua mineral natural para mantenerte hidratado todo el día.', 2),
-('Autos del Sur', 'Concesionaria con los mejores precios y financiación del mercado.', 3),
-('Librería Atenea', 'Especialistas en libros, cultura y eventos literarios.', 1),
-('Fitness Plus', 'Gimnasios y centros de entrenamiento con cobertura nacional.', 2),
-('Banco Unión', 'Tu banco de confianza con soluciones para cada etapa de tu vida.', 4),
-('Moda Urbana', 'Ropa moderna para jóvenes y adultos con estilo.', 2),
-('Helados Delicia', 'Los mejores helados artesanales con sabores únicos.', 3);
+INSERT INTO Patrocinador (Nombre, Descripcion, TransmisionDiaria,UrlImagen) VALUES
+('Café Amanecer', 'Café artesanal que acompaña tus mañanas con el mejor sabor.', 5, '/Assets/Imagenes/cafeAmanecer.jpg'),
+('TecnoMundo', 'Tu tienda de tecnología con las últimas novedades en electrónica.', 3, '/Assets/Imagenes/tecnoMundo.jpg'),
+('Viajes Solaris', 'Agencia de turismo que te lleva a conocer el mundo.', 4, '/Assets/Imagenes/sol.jpg'),
+('Agua Cristalina', 'Agua mineral natural para mantenerte hidratado todo el día.', 2, '/Assets/Imagenes/aguaCristlina.jpg'),
+('Autos del Sur', 'Concesionaria con los mejores precios y financiación del mercado.', 3, '/Assets/Imagenes/autoSur.jpg'),
+('Librería Atenea', 'Especialistas en libros, cultura y eventos literarios.', 1, '/Assets/Imagenes/libreria.jpg'),
+('Fitness Plus', 'Gimnasios y centros de entrenamiento con cobertura nacional.', 2, '/Assets/Imagenes/Fitness.jpg'),
+('Banco Unión', 'Tu banco de confianza con soluciones para cada etapa de tu vida.', 4, '/Assets/Imagenes/03.jpg'),
+('Moda Urbana', 'Ropa moderna para jóvenes y adultos con estilo.', 2, '/Assets/Imagenes/fachion.jpg'),
+('Helados Delicia', 'Los mejores helados artesanales con sabores únicos.', 3, '/Assets/Imagenes/healdoLogo.jpg');
 GO
 -- Tabla Noticia
 -- Inserción de 12 noticias con contenido detallado
 INSERT INTO Noticia (Titulo, Contenido, FechaPublicacion, Imagen) VALUES
 ('Nueva ley de tránsito entrará en vigor el próximo mes',
-'El gobierno anunció la implementación de una nueva ley de tránsito que busca reducir los accidentes viales en un 30% durante el primer año. Entre las principales modificaciones se incluyen el aumento en las sanciones por exceso de velocidad, obligatoriedad del uso del cinturón de seguridad en todos los asientos del vehículo y controles de alcoholemia más estrictos. Las autoridades aseguran que esta normativa ha sido trabajada con expertos y será acompañada por campañas educativas.', GETDATE(), NULL),
+'El gobierno anunció la implementación de una nueva ley de tránsito que busca reducir los accidentes viales en un 30% durante el primer año. Entre las principales modificaciones se incluyen el aumento en las sanciones por exceso de velocidad, obligatoriedad del uso del cinturón de seguridad en todos los asientos del vehículo y controles de alcoholemia más estrictos. Las autoridades aseguran que esta normativa ha sido trabajada con expertos y será acompañada por campañas educativas.',
+GETDATE(), '/Assets/Imagenes/transito2.jpg'),
 
 ('Festival Internacional de Cine se celebrará en nuestra ciudad',
-'Durante la primera semana de julio, la ciudad será sede del Festival Internacional de Cine, que reunirá a directores, actores y productores de todo el mundo. Se proyectarán más de 100 películas en distintas sedes culturales, con entradas accesibles y charlas abiertas al público. El evento busca promover la diversidad cultural y posicionar a la ciudad como un nuevo polo audiovisual.', GETDATE(), NULL),
+'Durante la primera semana de julio, la ciudad será sede del Festival Internacional de Cine, que reunirá a directores, actores y productores de todo el mundo. Se proyectarán más de 100 películas en distintas sedes culturales, con entradas accesibles y charlas abiertas al público. El evento busca promover la diversidad cultural y posicionar a la ciudad como un nuevo polo audiovisual.',
+GETDATE(), '/Assets/Imagenes/cine.jpg'),
 
 ('Avances en la vacuna contra el virus respiratorio estacional',
-'Un equipo de científicos del Instituto Nacional de Salud logró avances significativos en la creación de una vacuna contra el virus respiratorio estacional, que afecta a miles de personas cada año. Según los estudios clínicos, la fórmula ha demostrado un 85% de efectividad en adultos mayores. El proceso de aprobación está en marcha y se espera su distribución para fin de año.', GETDATE(), NULL),
+'Un equipo de científicos del Instituto Nacional de Salud logró avances significativos en la creación de una vacuna contra el virus respiratorio estacional, que afecta a miles de personas cada año. Según los estudios clínicos, la fórmula ha demostrado un 85% de efectividad en adultos mayores. El proceso de aprobación está en marcha y se espera su distribución para fin de año.',
+GETDATE(), '/Assets/Imagenes/vacuna.jpg'),
 
 ('Se inaugura un nuevo parque ecológico en el sur de la ciudad',
-'Con el objetivo de promover el contacto con la naturaleza y generar conciencia ambiental, se ha inaugurado un nuevo parque ecológico en el sur de la ciudad. El espacio cuenta con senderos interpretativos, áreas de picnic, espacios educativos y una zona especial para la observación de aves. El proyecto fue financiado con fondos municipales y donaciones privadas.', GETDATE(), NULL),
+'Con el objetivo de promover el contacto con la naturaleza y generar conciencia ambiental, se ha inaugurado un nuevo parque ecológico en el sur de la ciudad. El espacio cuenta con senderos interpretativos, áreas de picnic, espacios educativos y una zona especial para la observación de aves. El proyecto fue financiado con fondos municipales y donaciones privadas.',
+GETDATE(), '/Assets/Imagenes/parque.jpg'),
 
 ('El sector tecnológico genera más de 10.000 nuevos empleos',
-'Según un reciente informe del Ministerio de Producción, el sector tecnológico generó más de 10.000 nuevos empleos en el último semestre. Las áreas más demandadas incluyen desarrollo de software, ciberseguridad y análisis de datos. Se proyecta que esta tendencia continuará en alza debido a la transformación digital en empresas e instituciones.', GETDATE(), NULL),
+'Según un reciente informe del Ministerio de Producción, el sector tecnológico generó más de 10.000 nuevos empleos en el último semestre. Las áreas más demandadas incluyen desarrollo de software, ciberseguridad y análisis de datos. Se proyecta que esta tendencia continuará en alza debido a la transformación digital en empresas e instituciones.',
+GETDATE(), '/Assets/Imagenes/tecnologia.jpg'),
 
 ('Encuesta revela que el 70% de los ciudadanos desea más transporte público',
-'Una encuesta realizada por la Universidad Nacional indica que el 70% de los ciudadanos considera urgente mejorar la red de transporte público. Las principales quejas se relacionan con la frecuencia de los servicios, el estado de las unidades y la falta de conexiones con zonas periféricas. Expertos aseguran que invertir en movilidad sostenible es clave para el desarrollo urbano.', GETDATE(), NULL),
+'Una encuesta realizada por la Universidad Nacional indica que el 70% de los ciudadanos considera urgente mejorar la red de transporte público. Las principales quejas se relacionan con la frecuencia de los servicios, el estado de las unidades y la falta de conexiones con zonas periféricas. Expertos aseguran que invertir en movilidad sostenible es clave para el desarrollo urbano.',
+GETDATE(), '/Assets/Imagenes/publico.jpg'),
 
 ('Campaña de donación de sangre supera expectativas',
-'La última campaña de donación de sangre organizada por el Hospital Central logró recolectar más de 3.000 unidades en una semana, superando ampliamente las expectativas. Las autoridades agradecieron la participación masiva de la comunidad y destacaron la importancia de mantener las reservas en niveles adecuados durante todo el año.', GETDATE(), NULL),
+'La última campaña de donación de sangre organizada por el Hospital Central logró recolectar más de 3.000 unidades en una semana, superando ampliamente las expectativas. Las autoridades agradecieron la participación masiva de la comunidad y destacaron la importancia de mantener las reservas en niveles adecuados durante todo el año.',
+GETDATE(), '/Assets/Imagenes/donacion.jpg'),
 
 ('Artistas locales presentan exposición colectiva en el museo de arte',
-'Un grupo de artistas locales presentó una exposición colectiva en el Museo de Arte Contemporáneo, con obras que abarcan desde la pintura hasta la instalación y el videoarte. La muestra, titulada "Reflejos de nuestra tierra", estará abierta durante dos meses y busca visibilizar el talento emergente y fomentar la producción cultural regional.', GETDATE(), NULL),
+'Un grupo de artistas locales presentó una exposición colectiva en el Museo de Arte Contemporáneo, con obras que abarcan desde la pintura hasta la instalación y el videoarte. La muestra, titulada "Reflejos de nuestra tierra", estará abierta durante dos meses y busca visibilizar el talento emergente y fomentar la producción cultural regional.',
+GETDATE(), '/Assets/Imagenes/museo.jpg'),
 
 ('La inflación registra una leve baja por tercer mes consecutivo',
-'Los datos del Instituto Nacional de Estadística revelan que la inflación ha registrado una leve baja por tercer mes consecutivo, situándose en un 2,3% mensual. Esta tendencia positiva ha sido atribuida a políticas de control de precios y estabilidad cambiaria. Sin embargo, economistas advierten que aún persisten desafíos estructurales.', GETDATE(), NULL),
+'Los datos del Instituto Nacional de Estadística revelan que la inflación ha registrado una leve baja por tercer mes consecutivo, situándose en un 2,3% mensual. Esta tendencia positiva ha sido atribuida a políticas de control de precios y estabilidad cambiaria. Sin embargo, economistas advierten que aún persisten desafíos estructurales.',
+GETDATE(), '/Assets/Imagenes/inflacion.jpg'),
 
 ('Estudiantes desarrollan app para ayudar a personas mayores con la tecnología',
-'Estudiantes de ingeniería informática de la Universidad Técnica lanzaron una aplicación pensada para asistir a personas mayores en el uso de tecnología. La app ofrece asistencia paso a paso para el uso de funciones básicas como llamadas, mensajes y videollamadas. También incluye botones grandes y modo de lectura fácil.', GETDATE(), NULL),
+'Estudiantes de ingeniería informática de la Universidad Técnica lanzaron una aplicación pensada para asistir a personas mayores en el uso de tecnología. La app ofrece asistencia paso a paso para el uso de funciones básicas como llamadas, mensajes y videollamadas. También incluye botones grandes y modo de lectura fácil.',
+GETDATE(), '/Assets/Imagenes/viejocelu.jpg'),
 
 ('Nueva edición de la Feria del Libro reúne a miles de visitantes',
-'La Feria del Libro abrió sus puertas con más de 300 editoriales, presentaciones de autores y actividades para todas las edades. Durante el fin de semana se registraron más de 50.000 visitantes, lo que marca un récord histórico para el evento. La feria continuará durante 10 días con entrada libre y gratuita.', GETDATE(), NULL),
+'La Feria del Libro abrió sus puertas con más de 300 editoriales, presentaciones de autores y actividades para todas las edades. Durante el fin de semana se registraron más de 50.000 visitantes, lo que marca un récord histórico para el evento. La feria continuará durante 10 días con entrada libre y gratuita.',
+GETDATE(), '/Assets/Imagenes/ferialibro.jpg'),
 
 ('Concierto solidario reúne fondos para centro de salud rural',
-'Este fin de semana se realizó un concierto solidario a beneficio del Centro de Salud Rural de San Pedro. Participaron artistas reconocidos y bandas emergentes, logrando reunir fondos para la compra de equipamiento médico. La comunidad agradeció el gesto y destacó el poder de la música como herramienta solidaria.', GETDATE(), NULL);
+'Este fin de semana se realizó un concierto solidario a beneficio del Centro de Salud Rural de San Pedro. Participaron artistas reconocidos y bandas emergentes, logrando reunir fondos para la compra de equipamiento médico. La comunidad agradeció el gesto y destacó el poder de la música como herramienta solidaria.',
+GETDATE(), '/Assets/Imagenes/concierto.jpg');
+
 GO
 -- Tabla ComentarioPrograma
 -- Inserción de 20 comentarios en programas de radio
@@ -546,13 +556,3 @@ INSERT INTO Clima (Fecha, Temperatura, Icono, Humedad, Viento, Condicion) VALUES
 ('2025-06-07', 16.1, 'tormenta.png', 85, 25, 'Tormenta eléctrica'),
 ('2025-06-08', 18.9, 'nublado.png', 70, 18, 'Nublado'),
 ('2025-06-09', 21.6, 'soleado.png', 60, 14, 'Soleado');
-
--- Programación para hoy: 2025-07-02
-INSERT INTO Programacion (ProgramaID, FechaHorario) VALUES
-(1, '2025-07-02 08:00:00'),  -- Mañanas Vibrantes
-(3, '2025-07-02 11:00:00'),  -- Noticias al Instante
-(2, '2025-07-02 14:00:00'),  -- Tardes de Jazz
-(4, '2025-07-02 17:00:00'),  -- Hora de Rock
-(8, '2025-07-02 21:00:00');  -- Noche de Nostalgia
-
-select * from ProgramaRadio

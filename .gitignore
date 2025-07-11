@@ -1,0 +1,15 @@
+# Carpetas generadas por Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+
+# Otros archivos temporales
+*.log
+*.tmp
+*.cache
+
+# Bases de datos locales o archivos sensibles (opcional)
+*.mdf
+*.ldf

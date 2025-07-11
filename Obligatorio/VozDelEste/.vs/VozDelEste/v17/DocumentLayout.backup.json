@@ -1,22 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\",
+  "WorkspaceRootPath": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\joeyc\\downloads\\rodrigo\\programacion3\\obligatorio\\vozdeleste\\webapplication\\views\\programaradios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\views\\programaradios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\webapplication\\controllers\\programaradioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\programaradioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\webapplication\\models\\programaradio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\models\\programaradio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\webapplication\\models\\comentarioprograma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\models\\comentarioprograma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +14,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProgramaRadio.cs",
-              "DocumentMoniker": "C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\WebApplication\\Models\\ProgramaRadio.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Models\\ProgramaRadio.cs",
-              "ToolTip": "C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\WebApplication\\Models\\ProgramaRadio.cs",
-              "RelativeToolTip": "WebApplication\\Models\\ProgramaRadio.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T19:00:55.953Z"
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProgramaRadiosController.cs",
-              "DocumentMoniker": "C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\WebApplication\\Controllers\\ProgramaRadiosController.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Controllers\\ProgramaRadiosController.cs",
-              "ToolTip": "C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\WebApplication\\Controllers\\ProgramaRadiosController.cs",
-              "RelativeToolTip": "WebApplication\\Controllers\\ProgramaRadiosController.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAAwL4AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T18:48:57.441Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ComentarioPrograma.cs",
-              "DocumentMoniker": "C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\WebApplication\\Models\\ComentarioPrograma.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Models\\ComentarioPrograma.cs",
-              "ToolTip": "C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\WebApplication\\Models\\ComentarioPrograma.cs",
-              "RelativeToolTip": "WebApplication\\Models\\ComentarioPrograma.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T18:46:55.707Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6d4078d1-5951-4ed1-ac0e-0a8099c1cce5}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\ProgramaRadios\\Details.cshtml",
-              "RelativeDocumentMoniker": "WebApplication\\Views\\ProgramaRadios\\Details.cshtml",
-              "ToolTip": "C:\\Users\\joeyc\\Downloads\\Rodrigo\\Programacion3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\ProgramaRadios\\Details.cshtml",
-              "RelativeToolTip": "WebApplication\\Views\\ProgramaRadios\\Details.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAACsAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-09T18:10:47.531Z",
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Web.config",
+              "RelativeDocumentMoniker": "WebApplication\\Web.config",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Web.config",
+              "RelativeToolTip": "WebApplication\\Web.config",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAEYAAADuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-07-11T02:20:33.922Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 897,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{007a3a6b-b5b2-454d-a2bd-cf929f989be2}"
             }
           ]
         }
