@@ -1,0 +1,31 @@
+﻿@model WebApplication.Models.Permiso
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+}
+@section styles {
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+<div class="formulario-container">
+
+    <div class="form-flex">
+        <h4>Detalles Permiso</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Editar", new { id = Model.Id }, new { @class = "input-btn" }) |
+        <a href="@Url.Action("Index")" class="volver">Volver</a>
+    </p>

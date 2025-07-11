@@ -1,0 +1,148 @@
+:root {
+    --fuente: "Montserrat", sans-serif;
+    --color-primario: #46c6ec;
+    --color-secundario: #eabc95;
+    --color-blanco: #c2d2e581;
+    --color-negro: #1f3147;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+    color: #fff;
+}
+
+.programacion-titulo {
+    font-size: 82px;
+    text-align: center;
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+
+.lista-dias {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+    border-top: 2px solid #ccc;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.link-dia {
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 5px 15px;
+    border-bottom: 0px solid var(--color-secundario);
+}
+
+    .link-dia:hover {
+        color: var(--color-secundario);
+        border-bottom: 1px solid var(--color-secundario);
+    }
+
+@media (max-width: 768px) {
+    .lista-dias {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.programacion-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.programacion-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 300px;
+    overflow: hidden;
+}
+
+    /* Capa oscura encima de la imagen */
+    .programacion-item::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8); /* Oscuridad ajustable */
+        z-index: 0;
+    }
+
+    /* Para que el texto esté por encima de la oscuridad */
+    .programacion-item > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .programacion-item h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0;
+        text-transform: uppercase;
+        text-align:start;
+    }
+
+.conductores {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    text-align: start;
+}
+
+.horario {
+    font-size: 20px;
+    font-weight: bold;
+    text-align:start;
+}
+
+.descripcion {
+    font-size: 16px;
+    line-height: 1.5;
+   text-align:start;
+}
+
+.programacion-item {
+    background-color: #0005;
+}
+
+@media (max-width: 768px) {
+    .lista-dias {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .programacion-grid {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .programacion-item {
+        padding: 15px;
+        gap: 10px;
+    }
+}

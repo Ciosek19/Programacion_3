@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebApplication.Models.Noticia>
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    <link href="~/Content/noticias.css" rel="stylesheet" />
+}
+@section scripts {
+    <script src="~/Scripts/expandirNoticia.js"></script>
+}
+
+<h1 class="noticias-titulo">Noticias</h1>
+
+<div class="noticias-flexbox">
+    @foreach (var noticia in Model)
+    {
+        <div class="noticia">
+            <div class="noticia-imagen">
+                <img src="@noticia.Imagen" alt="imagen de la noticia" />
+            </div>
+            <div class="noticia-info">
+                <h2 class="noticia-titulo">@noticia.Titulo</h2>
+                <p class="noticia-descripcion">
+                    @noticia.Contenido
+                </p>
+                <button class="noticia-btnExpandir">Expandir</button>
+                <p class="noticia-fecha">@noticia.FechaPublicacion.ToString("dd/MM/yyyy HH:mm")</p>
+            </div>
+        </div>
+    }
+</div>

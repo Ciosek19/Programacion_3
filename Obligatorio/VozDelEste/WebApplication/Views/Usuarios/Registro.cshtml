@@ -1,0 +1,77 @@
+﻿@model WebApplication.ViewModels.RegistroViewModel
+
+@{
+    ViewBag.Title = "Crear usuario";
+}
+
+@section styles {
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" />
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <link rel="stylesheet" href="~/Content/registro.css" />
+}
+
+<div class="formulario-container">
+    @using (Html.BeginForm("Registro", "Usuarios", FormMethod.Post, new { @class = "form-flex" }))
+    {
+        @Html.AntiForgeryToken()
+        <h1>Ingrese sus datos</h1>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <!-- Nombre -->
+        <div>
+            @Html.TextBoxFor(model => model.PersonaVM.Nombre, new { @class = "input-estilo", placeholder = "Nombre" })
+            @Html.ValidationMessageFor(model => model.PersonaVM.Nombre, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Apellido -->
+        <div>
+            @Html.TextBoxFor(model => model.PersonaVM.Apellido, new { @class = "input-estilo", placeholder = "Apellido" })
+            @Html.ValidationMessageFor(model => model.PersonaVM.Apellido, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Email -->
+        <div>
+            @Html.TextBoxFor(model => model.UsuarioVM.Email, new { @class = "input-estilo", placeholder = "Email", type = "email" })
+            @Html.ValidationMessageFor(model => model.UsuarioVM.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Nombre de Usuario -->
+        <div>
+            @Html.TextBoxFor(model => model.UsuarioVM.NombreUsuario, new { @class = "input-estilo", placeholder = "Nombre de Usuario" })
+            @Html.ValidationMessageFor(model => model.UsuarioVM.NombreUsuario, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Clave -->
+        <div>
+            @Html.PasswordFor(model => model.UsuarioVM.Clave, new { @class = "input-estilo", placeholder = "Clave" })
+            @Html.ValidationMessageFor(model => model.UsuarioVM.Clave, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Fecha de Nacimiento -->
+        <div>
+            @Html.TextBoxFor(model => model.PersonaVM.FechaNacimiento, new { @class = "input-estilo", type = "date", placeholder = "Fecha de Nacimiento" })
+            @Html.ValidationMessageFor(model => model.PersonaVM.FechaNacimiento, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Imagen URL -->
+        <div>
+            @Html.TextBoxFor(model => model.PersonaVM.ImagenUrl, new { @class = "input-estilo", placeholder = "Ingrese una imagen (opcional)", type = "file" })
+            @Html.ValidationMessageFor(model => model.PersonaVM.ImagenUrl, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Botón de Envío -->
+        <div>
+            <input class="input-btn" type="submit" value="Crear usuario" />
+        </div>
+
+        <!-- Volver -->
+        <div class="volver-contenedor">
+            <a class="volver" href="@Url.Action("Login", "Usuarios")">Volver</a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

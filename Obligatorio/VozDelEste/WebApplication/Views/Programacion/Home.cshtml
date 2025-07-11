@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication.ViewModels.DTO.ProgramaDTO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    <link href="~/Content/programacion.css" rel="stylesheet" />
+}
+@section scripts {
+    <script src="~/Scripts/programasDia.js"></script>
+}
+
+<h1 class="programacion-titulo">Programacion Semanal</h1>
+<ul class="lista-dias">
+    <li><a class="link-dia" href="">Domingo</a></li>
+    <li><a class="link-dia" href="">Lunes</a></li>
+    <li><a class="link-dia" href="">Martes</a></li>
+    <li><a class="link-dia" href="">Miercoles</a></li>
+    <li><a class="link-dia" href="">Jueves</a></li>
+    <li><a class="link-dia" href="">Viernes</a></li>
+    <li><a class="link-dia" href="">Sabado</a></li>
+</ul>
+<div class="programacion-grid">
+    @foreach (var item in Model)
+    {
+        var diaSemana = (int)item.FechaHorario.DayOfWeek; // 0=Domingo, 1=Lunes, etc.
+        <div class="programacion-item" style="background-image:url(@item.ImagenUrl)" data-dia="@diaSemana">
+            <h2>@item.Nombre</h2>
+            <p class="conductores">@string.Join(", ", item.NombresConductores)</p>
+            <p class="horario">@item.FechaHorario.ToString("HH:mm") - @item.FechaHorario.AddMinutes(item.Duracion.TotalMinutes).ToString("HH:mm")</p>
+            <p class="descripcion">@item.Descripcion</p>
+        </div>
+    }
+
+    <div class="programacion-item">
+        <h2>Titulo programa</h2>
+        <p class="conductores">Conductores</p>
+        <p class="horario">18:00 - 19:00</p>
+        <p class="descripcion">Lorem ipsum dolor sit amet consectetur. Nec in integer at tellus eget. Consequat sociis vehicula mattis imperdiet auctor a. </p>
+    </div>
+</div>
+
+
+
+</div>

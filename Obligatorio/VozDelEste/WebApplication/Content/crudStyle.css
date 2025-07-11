@@ -1,0 +1,72 @@
+﻿:root {
+    --fuente: "Montserrat", sans-serif;
+    --color-primario: #46c6ec;
+    --color-secundario: #eabc95;
+    --color-blanco: #c2d2e581;
+    --color-negro: #1f3147;
+    --color-negroalpha: #1f3147ee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+    color: #fff;
+}
+
+.tabla-estilo {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-negroalpha);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #0003;
+    margin-top: 25px;
+}
+
+    .tabla-estilo thead {
+        background-color: var(--color-primario);
+    }
+
+    .tabla-estilo th,
+    .tabla-estilo td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ffffff22;
+        color: #fff;
+        max-width: 200px;
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+
+    .tabla-estilo tr:hover {
+        background-color: #ffffff10;
+        transition: background-color 0.2s ease;
+    }
+
+.btn-create {
+    background-color: var(--color-primario);
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 2px solid var(--color-blanco);
+    transition: all 0.2s ease;
+}
+
+.btn-container {
+    text-align: end;
+}
+
+.btn-create:hover {
+    background-color: var(--color-secundario);
+    color: #fff;
+}
+
+.check-box {
+    width: 20px; 
+    height: 20px; 
+    transform: scale(1.5); 
+    margin: 5px;
+    cursor: pointer;
+}

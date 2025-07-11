@@ -1,0 +1,23 @@
+﻿@model List<WebApplication.Models.Noticia>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+   @foreach (var noticia in Model)
+   {
+      <div class="col">
+         <div class="card h-100 shadow-sm border-0">
+            @if (!string.IsNullOrEmpty(noticia.Imagen))
+            {
+               <img src="@noticia.Imagen" class="card-img-top" alt="Imagen de @noticia.Titulo" style="height: 180px; object-fit: cover;" />
+            }
+            <div class="card-body">
+               <h5 class="card-title">@noticia.Titulo</h5>
+               <p class="card-text text-muted"><small>@noticia.FechaPublicacion.ToString("dd/MM/yyyy")</small></p>
+               <p class="card-text">@Html.Raw(noticia.Contenido.Length > 150 ? noticia.Contenido.Substring(0, 150) + "..." : noticia.Contenido)</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-end">
+               <a href="" class="btn btn-outline-primary btn-sm">Leer más</a>
+            </div>
+         </div>
+      </div>
+   }
+</div>

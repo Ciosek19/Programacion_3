@@ -1,0 +1,148 @@
+﻿
+@{
+    var usuario = Session["UsuarioActual"] as WebApplication.Models.Usuario;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Voz del Este</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/style.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/home.css")" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav-principal">
+                <a href="@Url.Action("Index", "Home")" class="logo">
+                    <img src="@Url.Content("~/assets/Vector.svg")" alt="Logo de Mi Empresa" />
+                </a>
+                <div class="hamburger" id="hamburgerBtn">
+                    ☰
+                </div>
+
+                <ul class="nav-lista">
+                    <li class="dropdown">
+                        <span class="link-nav">Administración</span>
+                        <ul class="submenu">
+                            <li>@Html.ActionLink("Programas", "Index", "ProgramaRadios")</li>
+                            <li>@Html.ActionLink("Programacion", "Index", "Programacion")</li>
+                            <li>@Html.ActionLink("Noticias", "Index", "Noticias")</li>
+                            <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+                            <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
+                            <li>@Html.ActionLink("Permisos", "Index", "Permisos")</li>
+                            <li>@Html.ActionLink("Patrocinadores", "Index", "Patrocinadores")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Programación", "Home", "Programacion", new { area = "" }, new { @class = "link-nav" })</li>
+                    <li>@Html.ActionLink("Noticias", "Home", "Noticias", new { area = "" }, new { @class = "link-nav" })</li>
+                    <li>@Html.ActionLink("Clima", "Clima", "Contenido", new { area = "" }, new { @class = "link-nav" })</li>
+                    <li>@Html.ActionLink("Cotización", "Cotizacion", "Contenido", new { area = "" }, new { @class = "link-nav" })</li>
+
+                    @if (usuario == null)
+                    {
+                        <li>@Html.ActionLink("Registrarse", "Registro", "Usuarios", null, new { @class = "link-nav register" })</li>
+                        <li>@Html.ActionLink("Iniciar Sesión", "Login", "Usuarios", null, new { @class = "link-nav login" })</li>
+                    }
+                    else
+                    {
+                        <li><span class="link-nav">@usuario.Persona.Nombre @usuario.Persona.Apellido</span></li>
+                        <li>@Html.ActionLink("Cerrar Sesión", "Logout", "Usuarios", null, new { @class = "link-nav login" })</li>
+                    }
+                </ul>
+            </nav>
+
+            <!-- Modal del menú hamburguesa -->
+            <div id="menuModal" class="modal">
+                <div class="modal-contentt">
+                    <span class="close-btn" id="closeModal">&times;</span>
+                    <ul class="mobile-menu">
+                        <li class="admin-dropdown">
+                            <button id="adminToggle">Administración ⌄</button>
+                            <ul class="admin-submenu" id="adminSubmenu">
+                                <li>@Html.ActionLink("Programas", "Index", "ProgramaRadios")</li>
+                                <li>@Html.ActionLink("Programacion", "Index", "Programacion")</li>
+                                <li>@Html.ActionLink("Noticias", "Index", "Noticias")</li>
+                                <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+                                <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
+                                <li>@Html.ActionLink("Patrocinadores", "Index", "Patrocinadores")</li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Programación", "Home", "Programacion")</li>
+                        <li>@Html.ActionLink("Noticias", "Home", "Noticias")</li>
+                        <li>@Html.ActionLink("Clima", "Clima", "Contenido")</li>
+                        <li>@Html.ActionLink("Cotización", "Cotizacion", "Contenido")</li>
+                        @if (usuario == null)
+                        {
+                            <li>@Html.ActionLink("Registrarse", "Registro", "Usuarios")</li>
+                            <li>@Html.ActionLink("Iniciar Sesión", "Login", "Usuarios")</li>
+                        }
+                        else
+                        {
+                            <li><span>@usuario.Persona.Nombre @usuario.Persona.Apellido</span></li>
+                            <li>@Html.ActionLink("Cerrar Sesión", "Logout", "Usuarios")</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main role="main">
+            @RenderBody()
+        </main>
+
+        <footer class="footer">
+            <div class="footer-contenido">
+                <div class="footer-logo">
+                    <img src="@Url.Content("~/assets/Vector.svg")" alt="Logo de la empresa" />
+                </div>
+
+                <div class="footer-enlaces">
+                    <div class="footer-columna">
+                        <h4>Secciones</h4>
+                        <ul>
+                            <li>@Html.ActionLink("Programación", "Programacion", "Contenido")</li>
+                            <li>@Html.ActionLink("Noticias", "Noticias", "Contenido")</li>
+                            <li>@Html.ActionLink("Clima", "Clima", "Contenido")</li>
+                            <li>@Html.ActionLink("Cotización", "Cotizacion", "Contenido")</li>
+                        </ul>
+                    </div>
+                    <div class="footer-columna">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li>@Html.ActionLink("Términos y condiciones", "Terminos", "Home")</li>
+                            <li>@Html.ActionLink("Política de privacidad", "Privacidad", "Home")</li>
+                        </ul>
+                    </div>
+                    <div class="footer-columna">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li><a href="mailto:info@miempresa.com">info@miempresa.com</a></li>
+                            <li><a href="#">+95 893 884</a></li>
+                            <li><a href="#">Maldonado, Uruguay</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copy">
+                <p>&copy; @DateTime.Now.Year - Mi Empresa. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="@Url.Content("~/scripts/menu.js")"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("styles", required: false)
+</body>
+</html>

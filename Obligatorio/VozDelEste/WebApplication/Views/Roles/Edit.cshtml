@@ -1,0 +1,45 @@
+﻿@model WebApplication.ViewModels.RolEditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/Content/login.css" />
+}
+<div class="formulario-container">
+    <h1>Editar Rol</h1>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(m => m.IdRol)
+
+        <div class="form-flex">
+            @Html.LabelFor(m => m.Nombre)
+            @Html.TextBoxFor(m => m.Nombre, new { @class = "input-estilo" })
+            @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+
+            <h4>Permisos</h4>
+            <div>
+                @for (int i = 0; i < Model.Permisos.Count; i++)
+                {
+                    <div>
+                        @Html.HiddenFor(m => m.Permisos[i].IdPermiso)
+                        <label>
+                            @Html.CheckBoxFor(m => m.Permisos[i].Seleccionado)
+                            @Model.Permisos[i].Nombre
+                        </label>
+                    </div>
+                }
+            </div>
+
+            <button type="submit" class="input-btn">Guardar cambios</button>
+        </div>
+    }
+
+    <div class="volver-contenedor">
+        <a href="@Url.Action("Index")" class="volver">Volver</a>
+    </div>
+</div>

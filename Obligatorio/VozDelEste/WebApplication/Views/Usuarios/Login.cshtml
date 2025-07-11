@@ -1,0 +1,50 @@
+﻿@model WebApplication.Models.Usuario
+
+@{
+    ViewBag.Title = "Iniciar sesión";
+}
+
+@section styles {
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" />
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <link rel="stylesheet" href="~/Content/login.css" />
+}
+
+<div class="formulario-container">
+    @using (Html.BeginForm("Login", "Usuarios", FormMethod.Post, new { @class = "form-flex" }))
+    {
+        <h1>Iniciar sesión</h1>
+        <hr />
+
+        <!-- Usuario -->
+        <div>
+            @Html.TextBoxFor(e => e.NombreUsuario, new { @class = "input-estilo", placeholder = "Nombre de usuario" })
+            @Html.ValidationMessageFor(e => e.NombreUsuario, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Contraseña -->
+        <div>
+            @Html.PasswordFor(e => e.Clave, new { @class = "input-estilo", placeholder = "Contraseña" })
+            @Html.ValidationMessageFor(e => e.Clave, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Botón -->
+        <div>
+            <input type="submit" value="Iniciar sesión" class="input-btn" />
+        </div>
+
+        <!-- Mensaje de error -->
+        if(!string.IsNullOrEmpty(ViewBag.Mensaje))
+        {
+            <p class="text-danger">@ViewBag.Mensaje</p>
+        }
+        <!-- Enlace a Registro -->
+        <div class="volver-contenedor">
+            <a class="volver" href="@Url.Action("Registro", "Usuarios")">¿No tenés cuenta? Registrate</a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

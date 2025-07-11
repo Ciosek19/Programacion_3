@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VozDelEsteBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Clima">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Temperatura" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="Icono" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Humedad" Type="Int32" Nullable="false" />
+    <Property Name="Viento" Type="Int32" Nullable="false" />
+    <Property Name="Condicion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ComentarioPrograma">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioID" Type="Int32" Nullable="false" />
+    <Property Name="ProgramaID" Type="Int32" Nullable="false" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ProgramaRadio" Relationship="Self.FK__Comentari__Progr__17F790F9" FromRole="ComentarioPrograma" ToRole="ProgramaRadio" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Comentari__Usuar__17036CC0" FromRole="ComentarioPrograma" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Conductor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonaID" Type="Int32" Nullable="false" />
+    <Property Name="Biografia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__Conductor__Perso__06CD04F7" FromRole="Conductor" ToRole="Persona" />
+    <NavigationProperty Name="ProgramaRadio" Relationship="Self.ConductorProgramaRadio" FromRole="Conductor" ToRole="ProgramaRadio" />
+  </EntityType>
+  <EntityType Name="CotizacionMoneda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TipoMoneda" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ValorCompra" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ValorVenta" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Noticia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contenido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FechaPublicacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Imagen" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Patrocinador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TransmisionDiaria" Type="Int32" />
+    <Property Name="UrlImagen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Permiso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Rol" Relationship="Self.RolPermiso" FromRole="Permiso" ToRole="Rol" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ImagenUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Conductor" Relationship="Self.FK__Conductor__Perso__06CD04F7" FromRole="Persona" ToRole="Conductor" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Persona__7F2BE32F" FromRole="Persona" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Programacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramaID" Type="Int32" Nullable="false" />
+    <Property Name="FechaHorario" Type="DateTime" Precision="3" Nullable="false" />
+    <NavigationProperty Name="ProgramaRadio" Relationship="Self.FK__Programac__Progr__0B91BA14" FromRole="Programacion" ToRole="ProgramaRadio" />
+  </EntityType>
+  <EntityType Name="ProgramaRadio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ImagenUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ComentarioPrograma" Relationship="Self.FK__Comentari__Progr__17F790F9" FromRole="ProgramaRadio" ToRole="ComentarioPrograma" />
+    <NavigationProperty Name="Programacion" Relationship="Self.FK__Programac__Progr__0B91BA14" FromRole="ProgramaRadio" ToRole="Programacion" />
+    <NavigationProperty Name="Conductor" Relationship="Self.ConductorProgramaRadio" FromRole="ProgramaRadio" ToRole="Conductor" />
+    <Property Name="Duracion" Type="Time" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Permiso" Relationship="Self.RolPermiso" FromRole="Rol" ToRole="Permiso" />
+    <NavigationProperty Name="Usuario" Relationship="Self.UsuarioRol" FromRole="Rol" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonaID" Type="Int32" Nullable="false" />
+    <Property Name="NombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Clave" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Silenciado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ComentarioPrograma" Relationship="Self.FK__Comentari__Usuar__17036CC0" FromRole="Usuario" ToRole="ComentarioPrograma" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__Usuario__Persona__7F2BE32F" FromRole="Usuario" ToRole="Persona" />
+    <NavigationProperty Name="Rol" Relationship="Self.UsuarioRol" FromRole="Usuario" ToRole="Rol" />
+  </EntityType>
+  <Association Name="FK__Comentari__Progr__17F790F9">
+    <End Role="ProgramaRadio" Type="Self.ProgramaRadio" Multiplicity="1" />
+    <End Role="ComentarioPrograma" Type="Self.ComentarioPrograma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProgramaRadio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComentarioPrograma">
+        <PropertyRef Name="ProgramaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comentari__Usuar__17036CC0">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ComentarioPrograma" Type="Self.ComentarioPrograma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComentarioPrograma">
+        <PropertyRef Name="UsuarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Conductor__Perso__06CD04F7">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Conductor" Type="Self.Conductor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Conductor">
+        <PropertyRef Name="PersonaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__Persona__7F2BE32F">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="PersonaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Programac__Progr__0B91BA14">
+    <End Role="ProgramaRadio" Type="Self.ProgramaRadio" Multiplicity="1" />
+    <End Role="Programacion" Type="Self.Programacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProgramaRadio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Programacion">
+        <PropertyRef Name="ProgramaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ConductorProgramaRadio">
+    <End Role="Conductor" Type="Self.Conductor" Multiplicity="*" />
+    <End Role="ProgramaRadio" Type="Self.ProgramaRadio" Multiplicity="*" />
+  </Association>
+  <Association Name="RolPermiso">
+    <End Role="Permiso" Type="Self.Permiso" Multiplicity="*" />
+    <End Role="Rol" Type="Self.Rol" Multiplicity="*" />
+  </Association>
+  <Association Name="UsuarioRol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="*" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="VozDelEsteContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clima" EntityType="Self.Clima" />
+    <EntitySet Name="ComentarioPrograma" EntityType="Self.ComentarioPrograma" />
+    <EntitySet Name="Conductor" EntityType="Self.Conductor" />
+    <EntitySet Name="CotizacionMoneda" EntityType="Self.CotizacionMoneda" />
+    <EntitySet Name="Noticia" EntityType="Self.Noticia" />
+    <EntitySet Name="Patrocinador" EntityType="Self.Patrocinador" />
+    <EntitySet Name="Permiso" EntityType="Self.Permiso" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" />
+    <EntitySet Name="Programacion" EntityType="Self.Programacion" />
+    <EntitySet Name="ProgramaRadio" EntityType="Self.ProgramaRadio" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK__Comentari__Progr__17F790F9" Association="Self.FK__Comentari__Progr__17F790F9">
+      <End Role="ProgramaRadio" EntitySet="ProgramaRadio" />
+      <End Role="ComentarioPrograma" EntitySet="ComentarioPrograma" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comentari__Usuar__17036CC0" Association="Self.FK__Comentari__Usuar__17036CC0">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ComentarioPrograma" EntitySet="ComentarioPrograma" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Conductor__Perso__06CD04F7" Association="Self.FK__Conductor__Perso__06CD04F7">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Conductor" EntitySet="Conductor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__Persona__7F2BE32F" Association="Self.FK__Usuario__Persona__7F2BE32F">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Programac__Progr__0B91BA14" Association="Self.FK__Programac__Progr__0B91BA14">
+      <End Role="ProgramaRadio" EntitySet="ProgramaRadio" />
+      <End Role="Programacion" EntitySet="Programacion" />
+    </AssociationSet>
+    <AssociationSet Name="ConductorProgramaRadio" Association="Self.ConductorProgramaRadio">
+      <End Role="Conductor" EntitySet="Conductor" />
+      <End Role="ProgramaRadio" EntitySet="ProgramaRadio" />
+    </AssociationSet>
+    <AssociationSet Name="RolPermiso" Association="Self.RolPermiso">
+      <End Role="Permiso" EntitySet="Permiso" />
+      <End Role="Rol" EntitySet="Rol" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioRol" Association="Self.UsuarioRol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

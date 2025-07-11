@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/registro.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <nav class="nav-principal">
+          <div class="logo">
+            <img src="assets/Vector.svg" alt="Logo de Mi Empresa" />
+          </div>
+
+          <!-- Botón hamburguesa -->
+          <div class="hamburger" id="hamburgerBtn">☰</div>
+
+          <!-- Menú original (solo para escritorio) -->
+          <ul class="nav-lista">
+            <li class="dropdown">
+              <a class="link-nav" href="#">Administración</a>
+              <ul class="submenu">
+                <li><a href="#">Usuarios</a></li>
+                <li><a href="#">Permisos</a></li>
+                <li><a href="#">Configuración</a></li>
+              </ul>
+            </li>
+            <li><a class="link-nav" href="#">Programación</a></li>
+            <li><a class="link-nav" href="#">Noticias</a></li>
+            <li><a class="link-nav" href="#">Clima</a></li>
+            <li><a class="link-nav" href="#">Cotización</a></li>
+            <li><a class="link-nav register" href="#">Registrarse</a></li>
+            <li><a class="link-nav login" href="#">Iniciar Sesión</a></li>
+          </ul>
+        </nav>
+
+        <!-- Modal del menú hamburguesa -->
+        <div id="menuModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+
+            <ul class="mobile-menu">
+              <li class="admin-dropdown">
+                <button id="adminToggle">Administración ⌄</button>
+                <ul class="admin-submenu" id="adminSubmenu">
+                  <li><a href="#">Usuarios</a></li>
+                  <li><a href="#">Permisos</a></li>
+                  <li><a href="#">Configuración</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Programación</a></li>
+              <li><a href="#">Noticias</a></li>
+              <li><a href="#">Clima</a></li>
+              <li><a href="#">Cotización</a></li>
+              <li><a href="#">Registrarse</a></li>
+              <li><a href="#">Iniciar Sesión</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="formulario-container">
+          <form class="form-flex" action="/Usuarios/Registro" method="post">
+            <h1>Ingrese sus datos</h1>
+            <hr />
+            <!-- Nombre -->
+            <div class="">
+              <div>
+                <input
+                  class="input-estilo"
+                  type="text"
+                  id="PersonaVM_Nombre"
+                  name="PersonaVM.Nombre"
+                  placeholder="Nombre"
+                />
+              </div>
+            </div>
+
+            <!-- Apellido -->
+            <div class="">
+              <div>
+                <input
+                  class="input-estilo"
+                  type="text"
+                  id="PersonaVM_Apellido"
+                  name="PersonaVM.Apellido"
+                  placeholder="Apellido"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="">
+              <div>
+                <input
+                  class="input-estilo"
+                  type="email"
+                  id="UsuarioVM_Email"
+                  name="UsuarioVM.Email"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+
+            <!-- Nombre de Usuario -->
+            <div class="">
+              <div>
+                <input
+                  class="input-estilo"
+                  type="text"
+                  id="UsuarioVM_NombreUsuario"
+                  name="UsuarioVM.NombreUsuario"
+                  placeholder="Nombre de Usuario"
+                />
+              </div>
+            </div>
+
+            <!-- Clave -->
+            <div class="">
+              <div>
+                <input
+                  class="input-estilo"
+                  type="password"
+                  id="UsuarioVM_Clave"
+                  name="UsuarioVM.Clave"
+                  placeholder="Clave"
+                />
+              </div>
+            </div>
+
+            <!-- Fecha de Nacimiento -->
+            <div class="">
+              <div>
+                <input
+                  class="input-estilo"
+                  type="date"
+                  id="PersonaVM_FechaNacimiento"
+                  name="PersonaVM.FechaNacimiento"
+                  placeholder="Fecha de Nacimiento"
+                />
+              </div>
+            </div>
+
+            <!-- Imagen URL -->
+            <div class="">
+              <div>
+                <input
+                  class="input-estilo"
+                  type="archive"
+                  id="PersonaVM_ImagenUrl"
+                  name="PersonaVM.ImagenUrl"
+                  placeholder="Ingrese una imagen (opcional)"
+                />
+              </div>
+            </div>
+
+            <!-- Botón de envío -->
+            <div class="">
+              <input class="input-btn" type="submit" value="Crear usuario" />
+            </div>
+            <div class="volver-contenedor">
+              <a class="volver" href="/Usuarios/Login">Volver</a>
+            </div>
+          </form>
+        </div>
+
+        <!-- Enlace para volver -->
+      </main>
+
+      <footer class="footer">
+        <div class="footer-contenido">
+          <div class="footer-logo">
+            <img src="assets/Vector.svg" alt="Logo de la empresa" />
+          </div>
+
+          <div class="footer-enlaces">
+            <div class="footer-columna">
+              <h4>Secciones</h4>
+              <ul>
+                <li><a href="#">Programación</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Clima</a></li>
+                <li><a href="#">Cotización</a></li>
+              </ul>
+            </div>
+            <div class="footer-columna">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+              </ul>
+            </div>
+            <div class="footer-columna">
+              <h4>Contacto</h4>
+              <ul>
+                <li><a href="#">info@miempresa.com</a></li>
+                <li><a href="#">+54 11 1234 5678</a></li>
+                <li><a href="#">Buenos Aires, Argentina</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copy">
+          <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="scripts/menu.js"></script>
+  </body>
+</html>

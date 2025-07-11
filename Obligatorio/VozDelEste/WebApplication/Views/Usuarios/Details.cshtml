@@ -1,0 +1,71 @@
+﻿@model WebApplication.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@section styles {
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+<div class="formulario-container">
+
+    <div class="form-flex">
+        <h4>Detalle Usuario</h4>
+        <dl>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NombreUsuario)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NombreUsuario)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Persona.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Persona.Nombre)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Persona.Apellido)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Persona.Apellido)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Rol)
+            </dt>
+            <dd>
+                @(Model.Rol != null && Model.Rol.Any()
+        ? string.Join(", ", Model.Rol.Select(r => r.Nombre))
+        : "Sin roles asignados")
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Silenciado)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Silenciado)
+            </dd>
+
+
+        </dl>
+
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Editar", new { id = Model.Id }, new { @class = "input-btn" }) |
+        <a href="@Url.Action("Index")" class="volver">Volver</a>
+    </p>
+</div>

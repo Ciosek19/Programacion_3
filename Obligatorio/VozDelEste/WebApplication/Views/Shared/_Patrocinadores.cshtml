@@ -1,0 +1,27 @@
+﻿@model List<WebApplication.Models.Patrocinador>
+
+<div class="swiper mySwiper">
+   <div class="swiper-wrapper">
+      @foreach (var p in Model)
+      {
+         <div class="swiper-slide text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/2041/2041143.png" alt="@p.Nombre" style="max-height: 100px; width: auto;" />
+         </div>
+      }
+   </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+   const swiper = new Swiper('.swiper', {
+      slidesPerView: 5,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+         delay: 2500,
+         disableOnInteraction: false,
+      },
+      speed: 1000,
+   });
+</script>
+
+

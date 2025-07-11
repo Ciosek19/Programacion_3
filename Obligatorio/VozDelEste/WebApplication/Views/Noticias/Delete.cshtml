@@ -1,0 +1,59 @@
+﻿@model WebApplication.Models.Noticia
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    <link href="~/Content/login.css" rel="stylesheet" />
+    }
+
+<div class="formulario-container">
+<dl class="form-flex">
+<h4>Estas seguro de eliminar esto?</h4>
+    <hr />
+    <dt>
+        @Html.DisplayNameFor(model => model.Titulo)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Titulo)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Contenido)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Contenido)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Imagen)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Imagen)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.FechaPublicacion)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.FechaPublicacion)
+    </dd>
+
+
+
+</dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="">
+            <input type="submit" value="Delete" class="input-btn" />
+        </div>
+        <br />
+            @Html.ActionLink("Volver", "Index", null, new { @class = "volver" })
+    }
+</div>

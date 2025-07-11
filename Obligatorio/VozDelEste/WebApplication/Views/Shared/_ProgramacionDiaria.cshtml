@@ -1,0 +1,45 @@
+﻿@using WebApplication.ViewModels.DTO
+@model List<WebApplication.ViewModels.DTO.ProgramaDTO>
+
+<style>
+   .programa-card {
+      background-color: #fdf6e3; /* pastel suave */
+      border-radius: 12px;
+      margin-bottom: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   }
+
+      .programa-card h3 {
+         font-size: 1.8rem;
+         margin-bottom: 10px;
+      }
+
+      .programa-card p {
+         font-size: 1.1rem;
+         color: #555;
+      }
+
+      .programa-card small {
+         color: #999;
+         font-size: 0.9rem;
+      }
+</style>
+
+<div class="container">
+   @foreach (var programa in Model)
+   {
+      <div class="row">
+         <div class="col-12">
+            <div class="programa-card">
+               <h3>@programa.Nombre</h3>
+               <p>@programa.Descripcion</p>
+               <small>@programa.FechaHorario.ToString("dddd dd 'de' MMMM - HH:mm")</small><br />
+               <a href="" class="btn btn-success mt-3">
+                  Ver más
+               </a>
+            </div>
+         </div>
+      </div>
+   }
+</div>

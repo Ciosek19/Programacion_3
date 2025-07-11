@@ -1,0 +1,101 @@
+﻿:root {
+    --fuente: "Montserrat", sans-serif;
+    --color-primario: #46c6ec;
+    --color-secundario: #eabc95;
+    --color-blanco: #c2d2e581;
+    --color-negro: #1f3147;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+    color: #fff;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 36px;
+}
+
+.formulario-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    border: 1px solid var(--color-blanco);
+    padding: 40px;
+    box-shadow: 5px 5px 10px #0003;
+    background-color: #1f3147;
+    border-radius: 10px;
+}
+
+.form-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-flex h4 {
+    text-align:center;
+}
+
+.input-estilo {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid var(--color-primario);
+    background-color: #0008;
+    color: #fff;
+}
+
+.input-btn {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    background-color: var(--color-primario);
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 5px;
+}
+
+    .input-btn:hover {
+        background-color: var(--color-secundario);
+    }
+
+.text-danger {
+    color: #ff8a8a;
+    font-size: 14px;
+}
+
+.volver-contenedor {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.volver {
+    background-color: var(--color-negro);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+    border:1px solid var(--color-secundario);
+}
+
+    .volver:hover {
+        background-color: var(--color-secundario);
+    }
+
+.fecha {
+    text-align: end;
+}
+
+.contenido {
+    line-height:180%;
+}

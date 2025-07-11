@@ -1,0 +1,246 @@
+:root {
+    --fuente: "Montserrat", sans-serif;
+    --color-primario: #46c6ec;
+    --color-secundario: #eabc95;
+    --color-blanco: #c2d2e581;
+    --color-negro: #1f3147;
+    --color-negroalpha: #1f3147dd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+    color: #fff;
+}
+/* -------- Seccion Radio En vivo -------- */
+
+.seccion-principal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(/assets/SectionPrincipal.png);
+    background-size: cover;
+    height: 566px;
+    padding: 60px;
+    border-radius: 30px;
+    position:relative;
+    top:-50px;
+    z-index:-1;
+}
+
+.en-vivo {
+}
+
+.boton-play {
+    text-align: center;
+}
+
+.a-continuacion {
+    text-align: end;
+}
+
+h3 {
+    font-size: 43px;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* Sección Programación */
+.seccion-programacion {
+    margin-top: 100px;
+    padding: 0 20px;
+}
+
+section h2 {
+    text-transform: uppercase;
+    font-size: 82px;
+    text-align: center;
+    line-height: 0.7;
+}
+
+.programacion {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.programa {
+    display: flex;
+    gap: 30px;
+    background: linear-gradient(to right, #0000, #000a, #0000);
+    padding: 30px;
+    border-radius: 12px;
+    align-items: flex-start;
+}
+
+.programa-imagen {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-primario);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:100%;
+}
+
+    .programa-imagen img {
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+.programa-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.programa-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.separador {
+    color: var(--color-blanco);
+}
+
+.programa-conductores {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.programa-descripcion {
+    line-height: 1.5;
+}
+
+.boton-expandir {
+    display: block;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: var(--color-primario);
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    section h2 {
+        font-size: 44px;
+        text-align: start;
+        line-height: normal;
+    }
+
+    .programa {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .programa-titulo {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .programa-info {
+        align-items: center;
+    }
+}
+
+/* Sección Últimas Noticias */
+
+.seccion-noticias {
+    margin-top:100px;
+}
+
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.seccion-noticias h2 {
+    text-align: start;
+    margin-bottom: 20px;
+}
+
+.noticia {
+    background: var(--color-negroalpha);
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    height: auto;
+    min-height: 200px;
+}
+
+.noticia-info {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content:space-between;
+    width:100%;
+    height:100%;
+}
+
+    .noticia-info p {
+        text-wrap: wrap;
+    }
+
+.noticia-vista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.noticia-imagen {
+    background-color: var(--color-secundario);
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+    .noticia-imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+    }
+
+.boton-ver-mas {
+    border-radius: 15px;
+    padding: 10px 30px;
+    background-color: var(--color-primario);
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .boton-ver-mas:hover {
+        background-color: var(--color-secundario);
+    }

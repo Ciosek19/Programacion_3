@@ -1,0 +1,37 @@
+﻿@model WebApplication.Models.Patrocinador
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+<div class="formulario-container">
+    <div class="form-flex">
+        <h4>@Model.Nombre</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dd style="text-align: center">
+                <img src="@Model.UrlImagen" alt="Imagen del patrocinador" style="width: 70%; margin-bottom: 20px; object-fit:cover; border-radius:5px;" />
+            </dd>
+            <dd class="contenido" style="font-size:18px">
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TransmisionDiaria)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TransmisionDiaria)
+            </dd>
+            
+
+        </dl>
+    </div>
+    <p>
+        <a href="@Url.Action("Index")" class="volver" style="width:100%; text-align:center;">Volver</a>
+    </p>
+</div>
+

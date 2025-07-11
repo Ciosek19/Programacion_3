@@ -1,0 +1,335 @@
+﻿:root {
+    --fuente: "Montserrat", sans-serif;
+    --color-primario: #46c6ec;
+    --color-secundario: #eabc95;
+    --color-blanco: #c2d2e581;
+    --color-negro: #1f3147;
+    --color-negroalpha: #1f3147ee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+    color: #fff;
+}
+
+body{
+    background-color:var(--color-negro);
+}
+
+body::before {
+    content: "";
+    position: fixed; /* ✅ CAMBIO CLAVE: absolute → fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/assets/PuntaDelEste2.PNG);
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed; /* opcional */
+    filter: blur(10px);
+    z-index: -2;
+}
+body::after {
+    content: "";
+    position: sticky;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+li,
+a {
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}
+
+hr {
+    margin: 10px 0px;
+    box-shadow: none;
+    border: 1px solid #fff5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto auto;
+}
+
+header {
+    width: 100%;
+    padding: 30px 0px;
+    margin-bottom:50px;
+}
+
+.nav-principal {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo {
+    position: absolute;
+    top: 0px;
+    left: -15px;
+}
+
+.nav-lista {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+    .nav-lista li {
+        padding: 15px;
+        border-bottom: 1px solid var(--color-blanco);
+    }
+
+        .nav-lista li a:hover {
+            color: var(--color-secundario);
+            transition: all 0.2s ease-in-out;
+        }
+
+/* Posición del dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Submenú oculto por defecto */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 10;
+    background-color:#fff3;
+    backdrop-filter:blur(5px);
+}
+
+/* Mostrar submenú al hacer hover */
+.dropdown:hover .submenu {
+    display: flex;
+}
+
+/* Estilo de los enlaces internos */
+.submenu li {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--color-blanco);
+}
+
+    .submenu li a {
+        text-decoration: none;
+        display: block;
+    }
+
+/* MENU HAMBURGUESA - estilo reemplazado pero sin cambiar lugar ni media query */
+.hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    padding: 0px 10px;
+    border: 3px solid var(--color-primario);
+    border-radius: 15px;
+    padding: 8px 15px;
+    background-color: #0004;
+}
+
+    .hamburger:hover {
+        background-color: var(--color-primario);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+@media screen and (max-width: 1138px) {
+    main, header {
+        padding: 30px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-lista {
+        display: none;
+    }
+}
+
+/* Modal del menú */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000d;
+    backdrop-filter: blur(5px);
+}
+
+.modal-contentt {
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    position: relative;
+}
+
+.close-btn {
+    font-size: 2rem;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+/* Menú dentro del modal */
+.mobile-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    height: 90%;
+    padding: 30px;
+}
+
+    .mobile-menu li a {
+        padding: 10px;
+        border: 2px solid var(--color-primario);
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+        .mobile-menu li a:hover {
+            color: var(--color-secundario);
+            border: 2px solid var(--color-secundario);
+        }
+
+.admin-submenu {
+    display: none;
+    margin-left: 2rem;
+}
+
+    .admin-submenu li {
+        margin: 2rem 0;
+    }
+
+#adminToggle {
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    padding: 10px;
+    border: 2px solid var(--color-primario);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+    #adminToggle:hover {
+        color: var(--color-secundario);
+        border: 2px solid var(--color-secundario);
+    }
+
+
+
+/* Footer */
+
+.footer {
+    margin-top: 120px;
+    padding: 60px 20px 30px;
+    border-top: 1px solid #fff5;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.footer-columna h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--color-primario);
+    text-transform: uppercase;
+}
+
+.footer-columna ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-columna ul li {
+        margin-bottom: 10px;
+    }
+
+        .footer-columna ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+            .footer-columna ul li a:hover {
+                color: var(--color-secundario);
+                transition: color 0.2s ease-in-out;
+            }
+
+.footer-copy {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #ffffffaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-enlaces {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+}

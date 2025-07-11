@@ -1,0 +1,61 @@
+﻿@model WebApplication.Models.ProgramaRadio
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+
+@using (Html.BeginForm("Edit", "ProgramaRadios", FormMethod.Post, new { enctype = "multipart/form-data", @class = "formulario-container" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-flex">
+        <h4>Editar Programa</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="">
+            @Html.LabelFor(m => m.Nombre, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Nombre, new { @class = "input-estilo" })
+            @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="">
+            @Html.Label("Imagen", htmlAttributes: new { @class = "control-label" })
+            <input type="file" name="Imagen" class="input-estilo" />
+            @Html.ValidationMessage("Imagen", "", new { @class = "text-danger" })
+        </div>
+
+        @* Mostrar imagen actual *@
+        @if (!string.IsNullOrEmpty(Model.ImagenUrl))
+        {
+            <div style="margin-top:10px;">
+                <label>Imagen actual:</label><br />
+                <img src="@Url.Content(Model.ImagenUrl)" alt="Imagen actual" style="max-height: 150px;" />
+            </div>
+        }
+
+        <div class="">
+            @Html.LabelFor(m => m.Descripcion, htmlAttributes: new { @class = "control-label" })
+            @Html.TextAreaFor(m => m.Descripcion, new { @class = "input-estilo", rows = "5" })
+            @Html.ValidationMessageFor(m => m.Descripcion, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="">
+            @Html.LabelFor(m => m.Duracion, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Duracion, new { @class = "input-estilo" })
+            @Html.ValidationMessageFor(m => m.Duracion, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="">
+            <input type="submit" value="Guardar" class="input-btn" />
+            <br /><br />
+            <a href="@Url.Action("Index")" class="volver">Volver</a>
+        </div>
+    </div>
+}

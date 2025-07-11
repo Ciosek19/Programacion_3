@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VozDelEsteBDModelStoreContainer" CdmEntityContainer="VozDelEsteBDEntities">
+    <EntitySetMapping Name="Clima">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.Clima">
+        <MappingFragment StoreEntitySet="Clima">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Temperatura" ColumnName="Temperatura" />
+          <ScalarProperty Name="Icono" ColumnName="Icono" />
+          <ScalarProperty Name="Humedad" ColumnName="Humedad" />
+          <ScalarProperty Name="Viento" ColumnName="Viento" />
+          <ScalarProperty Name="Condicion" ColumnName="Condicion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComentarioPrograma">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.ComentarioPrograma">
+        <MappingFragment StoreEntitySet="ComentarioPrograma">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+          <ScalarProperty Name="ProgramaID" ColumnName="ProgramaID" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conductor">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.Conductor">
+        <MappingFragment StoreEntitySet="Conductor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PersonaID" ColumnName="PersonaID" />
+          <ScalarProperty Name="Biografia" ColumnName="Biografia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CotizacionMoneda">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.CotizacionMoneda">
+        <MappingFragment StoreEntitySet="CotizacionMoneda">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="TipoMoneda" ColumnName="TipoMoneda" />
+          <ScalarProperty Name="ValorCompra" ColumnName="ValorCompra" />
+          <ScalarProperty Name="ValorVenta" ColumnName="ValorVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Noticia">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.Noticia">
+        <MappingFragment StoreEntitySet="Noticia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patrocinador">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.Patrocinador">
+        <MappingFragment StoreEntitySet="Patrocinador">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="TransmisionDiaria" ColumnName="TransmisionDiaria" />
+          <ScalarProperty Name="UrlImagen" ColumnName="UrlImagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permiso">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.Permiso">
+        <MappingFragment StoreEntitySet="Permiso">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persona">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.Persona">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="ImagenUrl" ColumnName="ImagenUrl" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programacion">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.Programacion">
+        <MappingFragment StoreEntitySet="Programacion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProgramaID" ColumnName="ProgramaID" />
+          <ScalarProperty Name="FechaHorario" ColumnName="FechaHorario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramaRadio">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.ProgramaRadio">
+        <MappingFragment StoreEntitySet="ProgramaRadio">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ImagenUrl" ColumnName="ImagenUrl" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="VozDelEsteBDModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PersonaID" ColumnName="PersonaID" />
+          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Silenciado" ColumnName="Silenciado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ConductorProgramaRadio" TypeName="VozDelEsteBDModel.ConductorProgramaRadio" StoreEntitySet="ConductorProgramaRadio">
+      <EndProperty Name="Conductor">
+        <ScalarProperty Name="Id" ColumnName="ConductorID" />
+      </EndProperty>
+      <EndProperty Name="ProgramaRadio">
+        <ScalarProperty Name="Id" ColumnName="ProgramaID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RolPermiso" TypeName="VozDelEsteBDModel.RolPermiso" StoreEntitySet="RolPermiso">
+      <EndProperty Name="Permiso">
+        <ScalarProperty Name="Id" ColumnName="PermisoID" />
+      </EndProperty>
+      <EndProperty Name="Rol">
+        <ScalarProperty Name="Id" ColumnName="RolID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UsuarioRol" TypeName="VozDelEsteBDModel.UsuarioRol" StoreEntitySet="UsuarioRol">
+      <EndProperty Name="Rol">
+        <ScalarProperty Name="Id" ColumnName="RolID" />
+      </EndProperty>
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="Id" ColumnName="UsuarioID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

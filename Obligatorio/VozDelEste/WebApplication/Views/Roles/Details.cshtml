@@ -1,0 +1,33 @@
+﻿@model WebApplication.ViewModels.RolEditViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/Content/login.css" />
+}
+<div class="formulario-container">
+    <h1>Detalles del Rol</h1>
+
+    <div class="form-flex">
+        <div>
+            <label>Nombre:</label>
+            <p class="input-estilo" style="padding: 10px;">@Model.Nombre</p>
+        </div>
+
+        <div>
+            <h4>Permisos:</h4>
+            <ul>
+                @foreach (var permiso in Model.Permisos)
+                {
+                    <li>@permiso.Nombre</li>
+                }
+            </ul>
+        </div>
+
+        <div class="volver-contenedor">
+            <a href="@Url.Action("Index")" class="volver">Volver</a>
+        </div>
+    </div>
+</div>

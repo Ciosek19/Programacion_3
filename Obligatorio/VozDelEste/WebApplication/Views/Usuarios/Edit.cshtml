@@ -1,0 +1,68 @@
+﻿@model WebApplication.ViewModels.UsuarioEditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@section styles {
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+<div class="formulario-container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-flex">
+            <h4>Usuario</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.OUsuario.Id)
+
+            <div class="">
+                @Html.LabelFor(model => model.OUsuario.NombreUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="">
+                    @Html.EditorFor(model => model.OUsuario.NombreUsuario, new { htmlAttributes = new { @class = "input-estilo"} })
+                    @Html.ValidationMessageFor(model => model.OUsuario.NombreUsuario, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="">
+                @Html.LabelFor(model => model.OUsuario.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="">
+                    @Html.EditorFor(model => model.OUsuario.Email, new { htmlAttributes = new { @class = "input-estilo" } })
+                    @Html.ValidationMessageFor(model => model.OUsuario.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="">
+                @Html.Label("Roles", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="">
+                    @Html.ListBoxFor(model => model.RolIdsSeleccionados, Model.RolesDisponibles, new { @class = "input-estilo" })
+                </div>
+            </div>
+
+            <div class="">
+                @Html.LabelFor(model => model.OUsuario.Silenciado, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.OUsuario.Silenciado)
+                        @Html.ValidationMessageFor(model => model.OUsuario.Silenciado, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="">
+                    <input type="submit" value="Save" class="input-btn" />
+                </div>
+            </div>
+        </div>
+    }
+<br />
+    <div>
+        <a href="@Url.Action("Index")" class="volver">Volver</a>
+    </div>
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

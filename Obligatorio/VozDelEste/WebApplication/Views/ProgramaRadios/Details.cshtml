@@ -1,0 +1,91 @@
+﻿@model WebApplication.Models.ProgramaRadio
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+
+<div class="formulario-container">
+    <div class="form-flex">
+        <h4>@Model.Nombre</h4>
+        <hr />
+
+        <dl class="dl-horizontal">
+            @* Imagen del programa *@
+            @if (!string.IsNullOrEmpty(Model.ImagenUrl))
+            {
+                <dd style="text-align:center;">
+                    <img src="@Url.Content(Model.ImagenUrl)" alt="Imagen del programa" style="width: 70%; margin-bottom: 20px; object-fit:cover; border-radius:5px;" />
+                </dd>
+            }
+
+            @* Descripción *@
+            <dt>Descripción</dt>
+            <dd class="contenido">
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+
+            @* Duración *@
+            <dt style="margin-top:30px;">Duración</dt>
+            <dd class="">
+                @Html.DisplayFor(model => model.Duracion)
+            </dd>
+
+        </dl>
+        @if (Model.ComentarioPrograma != null && Model.ComentarioPrograma.Any())
+        {
+            <div style="margin-top: 40px;">
+                <h5>Comentarios</h5>
+                <hr />
+                <ul style="list-style: none; padding: 0;">
+                    @foreach (var comentario in Model.ComentarioPrograma.OrderByDescending(c => c.Id))
+                    {
+                        <li style="margin-bottom: 20px; background: #fff2; padding: 15px; border-radius: 5px;">
+                            <strong>@comentario.Usuario.NombreUsuario</strong>
+                            <p style="margin-top: 10px;">@comentario.Comentario</p>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+        else
+        {
+            <div style="margin-top: 40px;">
+                <h5>Comentarios</h5>
+                <p>No hay comentarios aún.</p>
+            </div>
+        }
+    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div style="margin-top: 40px;">
+            <h5>Deja un comentario</h5>
+            <hr />
+            @using (Html.BeginForm("AgregarComentario", "ProgramaRadios", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Hidden("ProgramaRadioId", Model.Id)
+
+                <div class="form-group">
+                    <label for="Contenido">Comentario</label>
+                    <textarea name="Contenido" class="input-estilo" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="input-btn">Enviar Comentario</button>
+            }
+        </div>
+    }
+    else
+    {
+        <div style="margin-top: 40px;">
+            <p>Para dejar un comentario, por favor <a href="@Url.Action("Login", "Usuarios")">inicia sesión</a>.</p>
+        </div>
+    }
+    <p style="margin-top:30px;">
+        <a href="@Url.Action("Index")" class="volver" style="width:100%; text-align:center;">Volver</a>
+    </p>
+</div>

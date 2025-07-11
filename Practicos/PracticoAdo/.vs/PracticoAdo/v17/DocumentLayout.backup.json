@@ -1,0 +1,178 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C766DAC2-B136-4CC8-BF29-BBD1942F7534}|Models\\Models.csproj|C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\models\\dto\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C766DAC2-B136-4CC8-BF29-BBD1942F7534}|Models\\Models.csproj|solutionrelative:models\\dto\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C766DAC2-B136-4CC8-BF29-BBD1942F7534}|Models\\Models.csproj|C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\models\\dto\\familiaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C766DAC2-B136-4CC8-BF29-BBD1942F7534}|Models\\Models.csproj|solutionrelative:models\\dto\\familiaproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{321DA1EC-8F97-4995-BC18-70CF18814A29}|DataAccess\\DataAccess.csproj|C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\dataaccess\\persistencia\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{321DA1EC-8F97-4995-BC18-70CF18814A29}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\persistencia\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB5F5A5E-0104-4A51-87EF-F0F5491C5C24}|PracticoAdo\\PracticoAdo.csproj|c:\\users\\rodri\\desktop\\cei\\programacion3\\practicos\\practicoado\\practicoado\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB5F5A5E-0104-4A51-87EF-F0F5491C5C24}|PracticoAdo\\PracticoAdo.csproj|solutionrelative:practicoado\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{321DA1EC-8F97-4995-BC18-70CF18814A29}|DataAccess\\DataAccess.csproj|C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\dataaccess\\repository\\familiaproductorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{321DA1EC-8F97-4995-BC18-70CF18814A29}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repository\\familiaproductorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2E3183-DA4A-47B2-ACA9-8883B162A5CB}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\businesslogic\\controllers\\almacencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2E3183-DA4A-47B2-ACA9-8883B162A5CB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\controllers\\almacencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{321DA1EC-8F97-4995-BC18-70CF18814A29}|DataAccess\\DataAccess.csproj|C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\dataaccess\\repository\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{321DA1EC-8F97-4995-BC18-70CF18814A29}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repository\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{321DA1EC-8F97-4995-BC18-70CF18814A29}|DataAccess\\DataAccess.csproj|C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\dataaccess\\persistencia\\pconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{321DA1EC-8F97-4995-BC18-70CF18814A29}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\persistencia\\pconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6d4078d1-5951-4ed1-ac0e-0a8099c1cce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PConexion.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\DataAccess\\Persistencia\\PConexion.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Persistencia\\PConexion.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\DataAccess\\Persistencia\\PConexion.cs",
+              "RelativeToolTip": "DataAccess\\Persistencia\\PConexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T23:58:16.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FamiliaProductoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\DataAccess\\Repository\\FamiliaProductoRepository.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repository\\FamiliaProductoRepository.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\DataAccess\\Repository\\FamiliaProductoRepository.cs",
+              "RelativeToolTip": "DataAccess\\Repository\\FamiliaProductoRepository.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAgwGkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T00:14:34.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\DataAccess\\Repository\\ProductoRepository.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repository\\ProductoRepository.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\DataAccess\\Repository\\ProductoRepository.cs",
+              "RelativeToolTip": "DataAccess\\Repository\\ProductoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T00:14:03.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AlmacenController.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\BusinessLogic\\Controllers\\AlmacenController.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Controllers\\AlmacenController.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\BusinessLogic\\Controllers\\AlmacenController.cs",
+              "RelativeToolTip": "BusinessLogic\\Controllers\\AlmacenController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBwAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T01:14:11.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\PracticoAdo\\Program.cs",
+              "RelativeDocumentMoniker": "PracticoAdo\\Program.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\PracticoAdo\\Program.cs",
+              "RelativeToolTip": "PracticoAdo\\Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAcwCYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T23:24:14.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\DataAccess\\Persistencia\\Repository.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Persistencia\\Repository.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\DataAccess\\Persistencia\\Repository.cs",
+              "RelativeToolTip": "DataAccess\\Persistencia\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T21:36:53.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FamiliaProducto.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\Models\\DTO\\FamiliaProducto.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\FamiliaProducto.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\Models\\DTO\\FamiliaProducto.cs",
+              "RelativeToolTip": "Models\\DTO\\FamiliaProducto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T23:51:06.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\Models\\DTO\\Producto.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\Producto.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion3\\Practicos\\PracticoAdo\\Models\\DTO\\Producto.cs",
+              "RelativeToolTip": "Models\\DTO\\Producto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T02:53:12.476Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 897,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{007a3a6b-b5b2-454d-a2bd-cf929f989be2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

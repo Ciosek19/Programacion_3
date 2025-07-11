@@ -1,0 +1,48 @@
+﻿@model WebApplication.Models.Programacion
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+
+<div class="formulario-container">
+    <div class="form-flex">
+
+        <dl>
+            <h4>Esta seguro de eliminar esto?</h4>
+            <hr />
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaHorario)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FechaHorario)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProgramaRadio.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProgramaRadio.Nombre)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="">
+                <input type="submit" value="Delete" class="input-btn" />
+            </div>
+            <br />
+            @Html.ActionLink("Volver", "Index", null, new { @class = "volver" })
+        }
+    </div>
+
+</div>

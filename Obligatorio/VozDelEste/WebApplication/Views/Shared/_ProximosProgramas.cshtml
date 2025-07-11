@@ -1,0 +1,18 @@
+﻿@using WebApplication.ViewModels.DTO
+@model List<ProgramaDTO>
+
+<div class="row g-0">
+   <!-- g-0 elimina los márgenes/gutters -->
+   @foreach (var programa in Model)
+   {
+      <div class="col-md-4">
+         <div class="p-3 border text-center">
+            <strong>@programa.Nombre</strong><br />
+            <small>@programa.FechaHorario.ToString()</small><br />
+            <a href="" class="btn btn-sm btn-primary mt-2">
+               Ver más
+            </a>
+         </div>
+      </div>
+   }
+</div>

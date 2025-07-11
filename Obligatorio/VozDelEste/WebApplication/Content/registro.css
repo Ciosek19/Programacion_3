@@ -1,0 +1,123 @@
+﻿:root {
+    --fuente: "Montserrat", sans-serif;
+    --color-primario: #46c6ec;
+    --color-secundario: #eabc95;
+    --color-blanco: #c2d2e581;
+    --color-negro: #1f3147;
+    --bg-azul: #1f314755;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+    color: #fff;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 42px;
+}
+
+.formulario-container {
+    width: 60%;
+    margin: auto;
+    padding: 40px;
+    box-shadow: 5px 5px 10px #0003;
+    background-color:var(--color-negro);
+    border-radius:10px;
+}
+
+.input-estilo {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid var(--color-primario);
+    background-color: #0008;
+    color: #fff;
+}
+
+.input-btn {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    background-color: var(--color-primario);
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 5px;
+}
+
+    .input-btn:hover {
+        background-color: var(--color-secundario);
+    }
+
+.form-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.volver-contenedor {
+    margin-top: 20px;
+}
+
+.volver {
+    background-color: var(--color-negro);
+    padding: 20px;
+    width: min-content;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+    .volver:hover {
+        background-color: var(--color-secundario);
+    }
+
+/* MEDIA QUERIES PARA RESPONSIVE */
+@media (max-width: 1024px) {
+    .formulario-container {
+        width: 80%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .formulario-container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .input-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .volver {
+        padding: 15px;
+    }
+}

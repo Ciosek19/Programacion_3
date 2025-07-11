@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+  <nav class="nav-principal">
+    <div class="logo">
+      <img src="assets/Vector.svg" alt="Logo de Mi Empresa" />
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <div class="hamburger" id="hamburgerBtn">
+      ☰
+    </div>
+
+    <!-- Menú original (solo para escritorio) -->
+    <ul class="nav-lista">
+      <li class="dropdown">
+        <a class="link-nav" href="#">Administración</a>
+        <ul class="submenu">
+          <li><a href="#">Usuarios</a></li>
+          <li><a href="#">Permisos</a></li>
+          <li><a href="#">Configuración</a></li>
+        </ul>
+      </li>
+      <li><a class="link-nav" href="#">Programación</a></li>
+      <li><a class="link-nav" href="#">Noticias</a></li>
+      <li><a class="link-nav" href="#">Clima</a></li>
+      <li><a class="link-nav" href="#">Cotización</a></li>
+      <li><a class="link-nav register" href="#">Registrarse</a></li>
+      <li><a class="link-nav login" href="#">Iniciar Sesión</a></li>
+    </ul>
+  </nav>
+
+  <!-- Modal del menú hamburguesa -->
+  <div id="menuModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+
+      <ul class="mobile-menu">
+        <li class="admin-dropdown">
+          <button id="adminToggle">Administración ⌄</button>
+          <ul class="admin-submenu" id="adminSubmenu">
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Permisos</a></li>
+            <li><a href="#">Configuración</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Programación</a></li>
+        <li><a href="#">Noticias</a></li>
+        <li><a href="#">Clima</a></li>
+        <li><a href="#">Cotización</a></li>
+        <li><a href="#">Registrarse</a></li>
+        <li><a href="#">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+      <main>
+        <!-- ACA EL CONTENIDO -->
+      </main>
+
+      <footer class="footer">
+        <div class="footer-contenido">
+          <div class="footer-logo">
+            <img src="assets/Vector.svg" alt="Logo de la empresa" />
+          </div>
+
+          <div class="footer-enlaces">
+            <div class="footer-columna">
+              <h4>Secciones</h4>
+              <ul>
+                <li><a href="#">Programación</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Clima</a></li>
+                <li><a href="#">Cotización</a></li>
+              </ul>
+            </div>
+            <div class="footer-columna">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+              </ul>
+            </div>
+            <div class="footer-columna">
+              <h4>Contacto</h4>
+              <ul>
+                <li><a href="#">info@miempresa.com</a></li>
+                <li><a href="#">+54 11 1234 5678</a></li>
+                <li><a href="#">Buenos Aires, Argentina</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copy">
+          <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="scripts/menu.js"></script>
+  </body>
+</html>

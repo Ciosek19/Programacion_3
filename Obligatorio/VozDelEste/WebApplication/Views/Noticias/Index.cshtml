@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApplication.Models.Noticia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    <link href="~/Content/crudStyle.css" rel="stylesheet" />
+}
+<p class="btn-container">
+    @Html.ActionLink("Crear Noticia", "Create", null, new { @class = "btn-create" })
+</p>
+<table class="tabla-estilo">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contenido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaPublicacion)
+        </th>
+        
+        <th>Opciones</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contenido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPublicacion)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

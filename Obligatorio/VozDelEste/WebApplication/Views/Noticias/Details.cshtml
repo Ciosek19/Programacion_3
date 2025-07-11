@@ -1,0 +1,30 @@
+﻿@model WebApplication.Models.Noticia
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+<div class="formulario-container">
+    <div class="form-flex">
+        <h4>@Model.Titulo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dd>
+                <img src="@Model.Imagen" alt="Imagen de la noticia" style="width: 100%; max-height:500px; margin-bottom: 20px; object-fit:cover; border-radius:5px;"/>
+            </dd>
+            <dd class="contenido">
+                @Html.DisplayFor(model => model.Contenido)
+            </dd>
+            <dd class="fecha" style="margin-top:35px">
+                @Html.DisplayFor(model => model.FechaPublicacion)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        <a href="@Url.Action("Index")" class="volver" style="width:100%; text-align:center;">Volver</a>
+    </p>
+</div>
