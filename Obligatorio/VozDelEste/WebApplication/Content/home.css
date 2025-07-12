@@ -22,8 +22,9 @@
    flex-direction: column;
    justify-content: space-between;
    background-image: url(/assets/SectionPrincipal.png);
-   background-size: contain;
+   background-size: cover;
    background-position: center;
+   background-repeat:no-repeat;
    height: 566px;
    padding: 60px;
    border-radius: 30px;
@@ -149,7 +150,7 @@ section h2 {
 
 .boton-expandir {
    display: block;
-   margin: 0 auto;
+   margin: 120px auto 0 auto;
    padding: 20px 40px;
    background-color: var(--color-primario);
    color: #fff;

@@ -1,0 +1,40 @@
+﻿@model WebApplication.ViewModels.ClimaPronosticoViewModel
+
+@{
+   ViewBag.Title = "View";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+   <link href="~/Content/clima.css" rel="stylesheet" />
+}
+
+<section class="clima-container">
+   <div class="clima-actual">
+      <div>
+         <p class="clima-condicion">@Model.ClimaActual.Condicion</p>
+         <p class="clima-temperatura">@Model.ClimaActual.Temperatura°C</p>
+      </div>
+      <p class="clima-fecha">@Model.ClimaActual.Fecha</p>
+   </div>
+   <div class="clima-pronosticos">
+
+      @foreach (var clima in Model.Anteriores)
+      {
+         <div class="clima-item">
+            <p class="clima-condicion">@clima.Condicion</p>
+            <p class="clima-temperatura">@clima.Temperatura°C</p>
+            <p class="clima-fecha">@clima.Fecha</p>
+         </div>
+      }
+      @foreach (var clima in Model.Posteriores)
+      {
+         <div class="clima-item">
+            <p class="clima-condicion">@clima.Condicion</p>
+            <p class="clima-temperatura">@clima.Temperatura°C</p>
+            <p class="clima-fecha">@clima.Fecha</p>
+         </div>
+      }
+   </div>
+</section>
+
+

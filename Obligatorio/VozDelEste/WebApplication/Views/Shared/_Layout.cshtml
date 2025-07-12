@@ -47,8 +47,8 @@
                }
                <li>@Html.ActionLink("Programación", "Home", "Programacion", new { area = "" }, new { @class = "link-nav" })</li>
                <li>@Html.ActionLink("Noticias", "Home", "Noticias", new { area = "" }, new { @class = "link-nav" })</li>
-               <li>@Html.ActionLink("Clima", "Clima", "Contenido", new { area = "" }, new { @class = "link-nav" })</li>
-               <li>@Html.ActionLink("Cotización", "Cotizacion", "Contenido", new { area = "" }, new { @class = "link-nav" })</li>
+               <li>@Html.ActionLink("Clima", "Home", "Climas", new { area = "" }, new { @class = "link-nav" })</li>
+               <li>@Html.ActionLink("Cotización", "Home", "Cotizacion", new { area = "" }, new { @class = "link-nav" })</li>
 
                @if (usuario == null)
                {
@@ -84,8 +84,8 @@
                   </li>
                   <li>@Html.ActionLink("Programación", "Home", "Programacion")</li>
                   <li>@Html.ActionLink("Noticias", "Home", "Noticias")</li>
-                  <li>@Html.ActionLink("Clima", "Clima", "Contenido")</li>
-                  <li>@Html.ActionLink("Cotización", "Cotizacion", "Contenido")</li>
+                  <li>@Html.ActionLink("Clima", "Home", "Climas")</li>
+                  <li>@Html.ActionLink("Cotización", "Home", "Cotizacion")</li>
                   @if (usuario == null)
                   {
                      <li>@Html.ActionLink("Registrarse", "Registro", "Usuarios")</li>
@@ -115,10 +115,10 @@
                <div class="footer-columna">
                   <h4>Secciones</h4>
                   <ul>
-                     <li>@Html.ActionLink("Programación", "Programacion", "Contenido")</li>
-                     <li>@Html.ActionLink("Noticias", "Noticias", "Contenido")</li>
-                     <li>@Html.ActionLink("Clima", "Clima", "Contenido")</li>
-                     <li>@Html.ActionLink("Cotización", "Cotizacion", "Contenido")</li>
+                     <li>@Html.ActionLink("Programación", "Home", "Programacion")</li>
+                     <li>@Html.ActionLink("Noticias", "Home", "Noticias")</li>
+                     <li>@Html.ActionLink("Clima", "Home", "Climas")</li>
+                     <li>@Html.ActionLink("Cotización", "Home", "Cotizacion")</li>
                   </ul>
                </div>
                <div class="footer-columna">

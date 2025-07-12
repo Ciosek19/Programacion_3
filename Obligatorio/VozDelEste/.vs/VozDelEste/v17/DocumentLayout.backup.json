@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\controllers\\noticiascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\noticiascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\views\\climas\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\views\\climas\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\views\\noticias\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\views\\noticias\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\services\\climaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\services\\climaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\viewmodels\\noticiasviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\viewmodels\\noticiasviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\controllers\\climascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\climascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\content\\clima.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\content\\clima.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,40 +47,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "NoticiasViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\ViewModels\\NoticiasViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication\\ViewModels\\NoticiasViewModel.cs",
-              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\ViewModels\\NoticiasViewModel.cs",
-              "RelativeToolTip": "WebApplication\\ViewModels\\NoticiasViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Title": "ClimasController.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Controllers\\ClimasController.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Controllers\\ClimasController.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Controllers\\ClimasController.cs",
+              "RelativeToolTip": "WebApplication\\Controllers\\ClimasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T02:16:00.4Z",
+              "WhenOpened": "2025-07-12T19:59:50.255Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Home.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\Noticias\\Home.cshtml",
-              "RelativeDocumentMoniker": "WebApplication\\Views\\Noticias\\Home.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\Noticias\\Home.cshtml",
-              "RelativeToolTip": "WebApplication\\Views\\Noticias\\Home.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-12T02:14:29.853Z",
+              "Title": "ClimaService.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Services\\ClimaService.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Services\\ClimaService.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Services\\ClimaService.cs",
+              "RelativeToolTip": "WebApplication\\Services\\ClimaService.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAQwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T19:55:02.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NoticiasController.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Controllers\\NoticiasController.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Controllers\\NoticiasController.cs",
-              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Controllers\\NoticiasController.cs",
-              "RelativeToolTip": "WebApplication\\Controllers\\NoticiasController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T02:12:42.814Z",
+              "Title": "Home.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\Climas\\Home.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\Climas\\Home.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\Climas\\Home.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\Climas\\Home.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwBQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-12T18:38:18.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clima.css",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Content\\clima.css",
+              "RelativeDocumentMoniker": "WebApplication\\Content\\clima.css",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Content\\clima.css",
+              "RelativeToolTip": "WebApplication\\Content\\clima.css",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-12T19:21:15.362Z",
               "EditorCaption": ""
             }
           ]
