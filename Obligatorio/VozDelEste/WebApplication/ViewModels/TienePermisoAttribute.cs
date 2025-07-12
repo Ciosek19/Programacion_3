@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication.Models;
+using WebApplication.ViewModels.DTO;
 
 public class TienePermisoAttribute : AuthorizeAttribute
 {
@@ -19,21 +20,25 @@ public class TienePermisoAttribute : AuthorizeAttribute
       if (session == null)
          return false;
 
-      var usuario = session["UsuarioActual"] as Usuario;
+      var usuario = session["UsuarioActual"] as UsuarioSesion;
       if (usuario == null)
          return false;
 
-      // Verifica si el usuario tiene el permiso indicado
-      bool tienePermiso = usuario.Rol != null && usuario.Rol
-          .SelectMany(r => r.Permiso)
-          .Any(p => string.Equals(p.Nombre, _permiso, StringComparison.OrdinalIgnoreCase));
+      if (string.IsNullOrWhiteSpace(_permiso))
+         return false;
 
-      return tienePermiso;
+      return usuario.Permisos.Any(p =>
+          string.Equals(p, _permiso, StringComparison.OrdinalIgnoreCase));
    }
 
    protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
    {
-      // Si no está autorizado, redirige al login o a una página de error
-      filterContext.Result = new RedirectResult("/Usuarios/Login");
+      var session = filterContext.HttpContext.Session;
+      if(session != null) filterContext.Result = new RedirectResult("Home/Index");
+      else
+      {
+         // Si no está autorizado, redirige al login o a una página de error
+         filterContext.Result = new RedirectResult("/Usuarios/Login");
+      }
    }
 }

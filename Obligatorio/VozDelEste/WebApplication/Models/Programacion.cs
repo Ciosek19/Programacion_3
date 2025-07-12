@@ -9,15 +9,18 @@
 
 namespace WebApplication.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Programacion
-    {
-        public int Id { get; set; }
-        public int ProgramaID { get; set; }
-        public System.DateTime FechaHorario { get; set; }
-    
-        public virtual ProgramaRadio ProgramaRadio { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+
+   public partial class Programacion
+   {
+      public int Id { get; set; }
+
+      [Required]
+      public int ProgramaID { get; set; }
+      public System.DateTime FechaHorario { get; set; }
+
+      public virtual ProgramaRadio ProgramaRadio { get; set; }
+   }
 }

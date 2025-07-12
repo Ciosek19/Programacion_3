@@ -9,23 +9,26 @@
 
 namespace WebApplication.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Conductor
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Conductor()
-        {
-            this.ProgramaRadio = new HashSet<ProgramaRadio>();
-        }
-    
-        public int Id { get; set; }
-        public int PersonaID { get; set; }
-        public string Biografia { get; set; }
-    
-        public virtual Persona Persona { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProgramaRadio> ProgramaRadio { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+
+   public partial class Conductor
+   {
+      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+      public Conductor()
+      {
+         this.ProgramaRadio = new HashSet<ProgramaRadio>();
+      }
+      [Key]
+      public int Id { get; set; }
+      public int PersonaID { get; set; }
+
+      [StringLength(maximumLength: int.MaxValue, ErrorMessage = "Limite de int.MaxValue caracteres")]
+      public string Biografia { get; set; }
+
+      public virtual Persona Persona { get; set; }
+      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+      public virtual ICollection<ProgramaRadio> ProgramaRadio { get; set; }
+   }
 }

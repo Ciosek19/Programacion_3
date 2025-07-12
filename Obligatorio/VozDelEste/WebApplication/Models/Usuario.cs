@@ -9,29 +9,42 @@
 
 namespace WebApplication.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Usuario
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuario()
-        {
-            this.ComentarioPrograma = new HashSet<ComentarioPrograma>();
-            this.Rol = new HashSet<Rol>();
-        }
-    
-        public int Id { get; set; }
-        public int PersonaID { get; set; }
-        public string NombreUsuario { get; set; }
-        public string Email { get; set; }
-        public string Clave { get; set; }
-        public bool Silenciado { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ComentarioPrograma> ComentarioPrograma { get; set; }
-        public virtual Persona Persona { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rol> Rol { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+
+   public partial class Usuario
+   {
+      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+      public Usuario()
+      {
+         this.ComentarioPrograma = new HashSet<ComentarioPrograma>();
+         this.Rol = new HashSet<Rol>();
+      }
+
+      public int Id { get; set; }
+      public int PersonaID { get; set; }
+
+      [StringLength(maximumLength: 50, ErrorMessage = "Limite de 50 caracteres")]
+      [Required]
+      public string NombreUsuario { get; set; }
+
+      [StringLength(maximumLength: 100, ErrorMessage = "Limite de 100 caracteres")]
+      [DataType(DataType.EmailAddress,ErrorMessage = "Ingrese un email valido")]
+      [Required]
+      public string Email { get; set; }
+
+      [StringLength(maximumLength: 255, ErrorMessage = "Limite de 255 caracteres")]
+      [DataType(DataType.Password, ErrorMessage = "Ingrese una clave valida")]
+      [Required]
+      public string Clave { get; set; }
+
+      public bool Silenciado { get; set; }
+
+      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+      public virtual ICollection<ComentarioPrograma> ComentarioPrograma { get; set; }
+      public virtual Persona Persona { get; set; }
+      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+      public virtual ICollection<Rol> Rol { get; set; }
+   }
 }

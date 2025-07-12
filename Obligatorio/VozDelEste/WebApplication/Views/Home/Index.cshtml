@@ -1,106 +1,120 @@
 ﻿@model WebApplication.ViewModels.HomeIndexViewModel
 
 @{
-    ViewBag.Title = "Pagina Principal";
+   ViewBag.Title = "Pagina Principal";
 }
 @section styles {
-    <link href="~/Content/home.css" rel="stylesheet" />
+   <link href="~/Content/home.css" rel="stylesheet" />
+}
+@section scripts {
+   <script src="~/Scripts/expandirHome.js"></script>
 }
 <main>
-    <section class="seccion-principal">
-        <div class="en-vivo">
-            <h4 class="section-title">En vivo</h4>
-            <h3 class="section-text">Esta boca no es mia</h3>
-        </div>
+   <section class="seccion-principal"
+            style="@(Model.ProgramaEnVivo != null ? $"background-image: url('{Model.ProgramaEnVivo.ImagenUrl}'); background-size: cover; position: relative;" : "")">
 
-        <div class="boton-play">
-            <img src="assets/PlayButton.png" alt="Botón de reproducción" />
-        </div>
+      @* Capa para oscurecer la imagen *@
+      @if (Model.ProgramaEnVivo != null)
+      {
+         <div class="overlay"></div>
+      }
 
-        <div class="a-continuacion">
-            <h4 class="section-title">A continuación</h4>
-            <h3 class="section-text">Esta boca no es mia</h3>
-        </div>
-    </section>
+      <div class="en-vivo">
+         <h4 class="section-title">En vivo</h4>
+         @if (Model.ProgramaEnVivo != null)
+         {
+            <h3 class="section-text">@Model.ProgramaEnVivo.Nombre</h3>
+         }
+         else
+         {
+            <h3 class="section-text">No hay ningún programa en vivo</h3>
+         }
+      </div>
 
-    <!-- SECCION PROGRAMACION -->
-    <section class="seccion-programacion">
-        <h2>Programación de hoy</h2>
-        <div class="programacion">
-            @{
-                foreach (var item in Model.programacionDiaria)
-                {
-                    <div class="programa">
-                        <div class="programa-imagen">
-                            <img src="@item.ImagenUrl" alt="Imagen del programa" />
-                        </div>
-                        <div class="programa-info">
-                            <div class="programa-titulo">
-                                <p class="programa-nombre">@item.Nombre |</p>
-                                <p class="programa-horario">@item.FechaHorario.ToString("HH:mm") - @(item.FechaHorario.Add(item.Duracion).ToString("HH:mm"))</p>
-                            </div>
-                            <p class="programa-conductores">
-                                @string.Join(", ", item.NombresConductores)
-                            </p>
-                            <p class="programa-descripcion">
-                                @item.Descripcion
-                            </p>
-                        </div>
-                    </div>
-                }
+      <div class="boton-play">
+         <img src="assets/PlayButton.png" alt="Botón de reproducción" />
+      </div>
+
+      <div class="a-continuacion">
+         <h4 class="section-title">A continuación</h4>
+         @if (Model.ProgramaSiguiente != null)
+         {
+            <h3 class="section-text">
+               @Model.ProgramaSiguiente.Nombre
+               <span style="font-weight:normal;">
+                  (@Model.ProgramaSiguiente.FechaHorario.ToString("HH:mm"))
+               </span>
+            </h3>
+         }
+         else
+         {
+            <h3 class="section-text">No hay más programas hoy</h3>
+         }
+      </div>
+   </section>
+
+
+
+   <!-- SECCION PROGRAMACION -->
+   <section class="seccion-programacion">
+      <h2>Programación de hoy</h2>
+      <div class="programacion">
+         @{
+            var count = 0;
+            foreach (var item in Model.programacionDiaria)
+            {
+               var hiddenClass = count >= 3 ? "hidden-programa" : "";
+               <div class="programa @hiddenClass">
+                  <div class="programa-imagen">
+                     <img src="@item.ImagenUrl" alt="Imagen del programa" />
+                  </div>
+                  <div class="programa-info">
+                     <div class="programa-titulo">
+                        <p class="programa-nombre">@item.Nombre |</p>
+                        <p class="programa-horario">@item.FechaHorario.ToString("HH:mm") - @(item.FechaHorario.Add(item.Duracion).ToString("HH:mm"))</p>
+                     </div>
+                     <p class="programa-conductores">
+                        @string.Join(", ", item.NombresConductores)
+                     </p>
+                     <p class="programa-descripcion">
+                        @item.Descripcion
+                     </p>
+                  </div>
+               </div>
+               count++;
             }
+         }
+         <button id="botonExpandir" class="boton-expandir">Expandir más</button>
+      </div>
+   </section>
 
+   <hr />
 
-            <div class="programa">
-                <div class="programa-imagen">
-                    <img src="~/assets/Imagenes/ejemplo.jpg" alt="Imagen del programa" />
-                </div>
-                <div class="programa-info">
-                    <div class="programa-titulo">
-                        <p class="programa-nombre">Nombre radio |</p>
-                        <p class="programa-horario">18:00 - 19:00</p>
-                    </div>
-                    <p class="programa-conductores">
-                        Patricio Estrella, Bob Esponja
-                    </p>
-                    <p class="programa-descripcion">
-                        Lorem ipsum dolor sit amet ec id adipiscing morbi ullamcorper
-                        consectetur...
-                    </p>
-                </div>
-            </div>
-
-            <button class="boton-expandir">Expandir más</button>
-        </div>
-    </section>
-
-    <hr />
-
-    <!-- SECCION NOTICIAS -->
-    <section class="seccion-noticias">
-        <h2>Últimas Noticias</h2>
-        <div class="noticias-grid">
-            @{
-                foreach (var item in Model.noticiasResumen)
-                {
-                    <div class="noticia">
-                        <div class="noticia-info">
-                            <h4>@item.Titulo</h4>
-                            <div class="noticia-imagen">
-                                <img src="@item.Imagen" alt="Imagen de la noticia" />
-                            </div>
-                            <p>
-                                @item.Contenido
-                            </p>
-                            <p style="text-align:end;">
-                                @item.FechaPublicacion
-                            </p>
-                            <a href="@Url.Action("Details", "Noticias", new { id = item.Id })" class="boton-ver-mas" style="text-align:center">Ver más</a>
-                        </div>
-                    </div>
-                }
+   <!-- SECCION NOTICIAS -->
+   <section class="seccion-noticias">
+      <h2>Últimas Noticias</h2>
+      <div class="noticias-grid">
+         @{
+            foreach (var item in Model.noticiasResumen)
+            {
+               <div class="noticia">
+                  <div class="noticia-info">
+                     <h4>@item.Titulo</h4>
+                     <div class="noticia-imagen">
+                        <img src="@item.Imagen" alt="Imagen de la noticia" />
+                     </div>
+                     <p>
+                        @item.Contenido
+                     </p>
+                     <p style="text-align:end;">
+                        @item.FechaPublicacion
+                     </p>
+                     <a href="@Url.Action("Details", "Noticias", new { id = item.Id })" class="boton-ver-mas" style="text-align:center">Ver más</a>
+                  </div>
+               </div>
             }
+         }
 
-        </div>
-    </section>
+      </div>
+   </section>
 </main>

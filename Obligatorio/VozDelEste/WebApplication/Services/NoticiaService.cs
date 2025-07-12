@@ -10,9 +10,33 @@ namespace WebApplication.Services
    {
       private readonly VozDelEsteBDEntities _contexto;
 
-      public NoticiaService(VozDelEsteBDEntities contexto)
+      public NoticiaService(VozDelEsteBDEntities context)
       {
-         _contexto = contexto;
+         _contexto = context;
+      }
+
+      // Obtener todas las noticias ordenadas por fecha descendente (más recientes primero)
+      public List<Noticia> ObtenerTodasNoticiasOrdenadasPorFecha()
+      {
+         return _contexto.Noticia
+             .OrderByDescending(n => n.FechaPublicacion)
+             .ToList();
+      }
+
+      // Obtener noticias paginadas de forma eficiente en base de datos
+      public List<Noticia> ObtenerNoticiasPaginadas(int pagina, int pageSize)
+      {
+         return _contexto.Noticia
+             .OrderByDescending(n => n.FechaPublicacion)
+             .Skip((pagina - 1) * pageSize)
+             .Take(pageSize)
+             .ToList();
+      }
+
+      // Contar el total de noticias
+      public int ContarNoticias()
+      {
+         return _contexto.Noticia.Count();
       }
 
       public List<Noticia> ObtenerResumenNoticias(int cantidad)

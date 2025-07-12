@@ -9,15 +9,22 @@
 
 namespace WebApplication.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class CotizacionMoneda
-    {
-        public int Id { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public string TipoMoneda { get; set; }
-        public decimal ValorCompra { get; set; }
-        public decimal ValorVenta { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+
+   public partial class CotizacionMoneda
+   {
+      public int Id { get; set; }
+
+      [Required]
+      public System.DateTime Fecha { get; set; }
+      
+      [StringLength(maximumLength: 50, ErrorMessage = "Limite de 50 caracteres")]
+      [Required]
+      public string TipoMoneda { get; set; }
+
+      public decimal ValorCompra { get; set; }
+      public decimal ValorVenta { get; set; }
+   }
 }

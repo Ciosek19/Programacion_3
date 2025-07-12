@@ -195,13 +195,16 @@
     <Compile Include="Services\NoticiaService.cs" />
     <Compile Include="Services\PatrocinadorService.cs" />
     <Compile Include="Services\ProgramacionService.cs" />
+    <Compile Include="ViewModels\DTO\UsuarioSesion.cs" />
     <Compile Include="ViewModels\HomeIndexViewModel.cs" />
     <Compile Include="ViewModels\DTO\ProgramaDTO.cs" />
+    <Compile Include="ViewModels\NoticiasViewModel.cs" />
     <Compile Include="ViewModels\PermisoCheckboxViewModel.cs" />
     <Compile Include="ViewModels\RegistroViewModel.cs" />
     <Compile Include="ViewModels\RolEditViewModel.cs" />
     <Compile Include="ViewModels\TienePermisoAttribute.cs" />
     <Compile Include="ViewModels\UsuarioEditViewModel.cs" />
+    <Compile Include="ViewModels\Validadores\FechaValidador.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -254,6 +257,7 @@
       <DependentUpon>ApplicationDbContext.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\expandirHome.js" />
     <Content Include="Scripts\expandirNoticia.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

@@ -9,17 +9,25 @@
 
 namespace WebApplication.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class ComentarioPrograma
-    {
-        public int Id { get; set; }
-        public int UsuarioID { get; set; }
-        public int ProgramaID { get; set; }
-        public string Comentario { get; set; }
-    
-        public virtual ProgramaRadio ProgramaRadio { get; set; }
-        public virtual Usuario Usuario { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+
+   public partial class ComentarioPrograma
+   {
+      public int Id { get; set; }
+
+      [Required]
+      public int UsuarioID { get; set; }
+
+      [Required]
+      public int ProgramaID { get; set; }
+
+      [StringLength(maximumLength: int.MaxValue, ErrorMessage = "Limite de int.MaxValue caracteres")]
+      [Required]
+      public string Comentario { get; set; }
+
+      public virtual ProgramaRadio ProgramaRadio { get; set; }
+      public virtual Usuario Usuario { get; set; }
+   }
 }

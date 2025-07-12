@@ -14,15 +14,6 @@ namespace WebApplication.ViewModels.DTO
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string ImagenUrl { get; set; }
-        public bool EstaEnVivo
-        {
-            get
-            {
-                var ahora = DateTime.Now;
-                return ahora >= FechaHorario && ahora <= FechaHorario.Add(Duracion);
-            }
-        }
-
         public List<string> NombresConductores { get; set; } = new List<string>();
     }
 

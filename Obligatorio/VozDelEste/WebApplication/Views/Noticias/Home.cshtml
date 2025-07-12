@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication.Models.Noticia>
+﻿@model WebApplication.ViewModels.NoticiasViewModel
 
 @{
     ViewBag.Title = "Home";
@@ -12,10 +12,8 @@
     <script src="~/Scripts/expandirNoticia.js"></script>
 }
 
-<h1 class="noticias-titulo">Noticias</h1>
-
 <div class="noticias-flexbox">
-    @foreach (var noticia in Model)
+    @foreach (var noticia in Model.Noticias)
     {
         <div class="noticia">
             <div class="noticia-imagen">
@@ -23,12 +21,22 @@
             </div>
             <div class="noticia-info">
                 <h2 class="noticia-titulo">@noticia.Titulo</h2>
-                <p class="noticia-descripcion">
-                    @noticia.Contenido
-                </p>
+                <p class="noticia-descripcion">@noticia.Contenido</p>
                 <button class="noticia-btnExpandir">Expandir</button>
                 <p class="noticia-fecha">@noticia.FechaPublicacion.ToString("dd/MM/yyyy HH:mm")</p>
             </div>
         </div>
+    }
+</div>
+
+<div class="paginacion">
+    @if (Model.PaginaActual > 1)
+    {
+        <a href="@Url.Action("Home", new { pagina = Model.PaginaActual - 1 })">Anterior</a>
+    }
+    Página @Model.PaginaActual de @Model.PaginasTotales
+    @if (Model.PaginaActual < Model.PaginasTotales)
+    {
+        <a href="@Url.Action("Home", new { pagina = Model.PaginaActual + 1 })">Siguiente</a>
     }
 </div>

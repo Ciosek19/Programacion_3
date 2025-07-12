@@ -9,24 +9,27 @@
 
 namespace WebApplication.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Rol
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Rol()
-        {
-            this.Permiso = new HashSet<Permiso>();
-            this.Usuario = new HashSet<Usuario>();
-        }
-    
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Permiso> Permiso { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+
+   public partial class Rol
+   {
+      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+      public Rol()
+      {
+         this.Permiso = new HashSet<Permiso>();
+         this.Usuario = new HashSet<Usuario>();
+      }
+      [Key]
+      public int Id { get; set; }
+
+      [StringLength(maximumLength: 50, ErrorMessage = "Limite de 50 caracteres")]
+      public string Nombre { get; set; }
+
+      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+      public virtual ICollection<Permiso> Permiso { get; set; }
+      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+      public virtual ICollection<Usuario> Usuario { get; set; }
+   }
 }

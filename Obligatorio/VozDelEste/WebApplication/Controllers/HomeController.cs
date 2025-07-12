@@ -23,39 +23,29 @@ namespace WebApplication.Controllers
          _patrocinadorService = new PatrocinadorService(contexto);
          _noticiaService = new NoticiaService(contexto);
       }
-    
+
       public ActionResult Index()
       {
-         var siguientesProgrmas = _programacionService.ObtenerResumen(3);
          var programacionDiaria = _programacionService.ObtenerProgramasDelDia();
-         ViewBag.Message = "Your application description page.";
-         var programaEnVivo = programacionDiaria.Find(e => e.EstaEnVivo);
-         if (programaEnVivo != null) ViewBag.ProgramaEnVivo = programaEnVivo;
          var patrocinadores = _patrocinadorService.ObtenerPatrocinadores();
          var noticias = _noticiaService.ObtenerResumenNoticias(5);
+         var enVivo = _programacionService.ProgramaEnVivo();
+         var ahora = DateTime.Now;
+         var siguiente = programacionDiaria
+             .Where(p => p.FechaHorario > ahora)
+             .OrderBy(p => p.FechaHorario)
+             .FirstOrDefault();
 
-         var dashboard = new HomeIndexViewModel()
+         var dashboard = new HomeIndexViewModel
          {
-            siguientesProgramas = siguientesProgrmas,
             programacionDiaria = programacionDiaria,
             patrocinadores = patrocinadores,
-            noticiasResumen = noticias
+            noticiasResumen = noticias,
+            ProgramaSiguiente = siguiente,
+            ProgramaEnVivo = enVivo
          };
+
          return View(dashboard);
-      }
-
-      [TienePermiso("Gestion Noticias")]
-      public ActionResult About()
-      {
-         
-         return View();
-      }
-
-      public ActionResult Contact()
-      {
-         ViewBag.Message = "Your contact page.";
-
-         return View();
       }
    }
 }

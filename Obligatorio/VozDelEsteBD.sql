@@ -122,7 +122,8 @@ BEGIN
         Id INT PRIMARY KEY IDENTITY,
         Nombre NVARCHAR(50) NOT NULL,
         ImagenUrl NVARCHAR(500),
-        Descripcion NVARCHAR(MAX)
+        Descripcion NVARCHAR(MAX),
+        Duracion TIME NOT NULL,
     );
 END
 GO
@@ -300,15 +301,15 @@ INSERT INTO Conductor (PersonaID, Biografia) VALUES
 (20, 'Fernando Silva es un conductor veterano con amplia audiencia.');
 GO
 -- Tabla ProgramaRadio
-INSERT INTO ProgramaRadio (Nombre, ImagenUrl, Descripcion) VALUES
-('Mañanas Vibrantes', '/Assets/Imagenes/4764773.jpg', 'Un programa matutino lleno de energía, noticias y buena música para empezar el día.'),
-('Tardes de Jazz', '/Assets/Imagenes/RadioJazz.jfif', 'Selección especial de jazz clásico y contemporáneo para acompañar tus tardes.'),
-('Noticias al Instante', '/Assets/Imagenes/RadioNoticias.jfif', 'Actualidad y análisis de las noticias más relevantes del día.'),
-('Hora de Rock', '/Assets/Imagenes/RadioRock.jfif', 'Lo mejor del rock nacional e internacional con entrevistas exclusivas.'),
-('Cultura y Letras', '/Assets/Imagenes/RadioCultura. _ Free…', 'Espacio dedicado a la literatura, el arte y la cultura en general.'),
-('Deportes en Vivo', '/Assets/Imagenes/RadioDeportes.jfif', 'Cobertura y debate de los eventos deportivos más importantes.'),
-('Tecnología Hoy', '/Assets/Imagenes/RadioTecnologia.jfif', 'Novedades y tendencias tecnológicas explicadas para todos.'),
-('Noche de Nostalgia', '/Assets/Imagenes/RadioNostalgia.jfif', 'Música de todas las épocas para revivir grandes recuerdos en la noche.');
+INSERT INTO ProgramaRadio (Nombre, ImagenUrl, Descripcion, Duracion) VALUES
+('Mañanas Vibrantes', '/Assets/Imagenes/4764773.jpg', 'Un programa matutino lleno de energía, noticias y buena música para empezar el día.', '02:30:00'),
+('Tardes de Jazz', '/Assets/Imagenes/RadioJazz.jfif', 'Selección especial de jazz clásico y contemporáneo para acompañar tus tardes.', '01:45:00'),
+('Noticias al Instante', '/Assets/Imagenes/RadioNoticias.jfif', 'Actualidad y análisis de las noticias más relevantes del día.', '01:10:00'),
+('Hora de Rock', '/Assets/Imagenes/RadioRock.jfif', 'Lo mejor del rock nacional e internacional con entrevistas exclusivas.', '02:00:00'),
+('Cultura y Letras', '/Assets/Imagenes/RadioCultura. _ Free…', 'Espacio dedicado a la literatura, el arte y la cultura en general.', '01:30:00'),
+('Deportes en Vivo', '/Assets/Imagenes/RadioDeportes.jfif', 'Cobertura y debate de los eventos deportivos más importantes.', '02:15:00'),
+('Tecnología Hoy', '/Assets/Imagenes/RadioTecnologia.jfif', 'Novedades y tendencias tecnológicas explicadas para todos.', '01:20:00'),
+('Noche de Nostalgia', '/Assets/Imagenes/RadioNostalgia.jfif', 'Música de todas las épocas para revivir grandes recuerdos en la noche.', '02:45:00');
 GO
 -- Tabla Programacion
 -- Programación semanal de programas de radio

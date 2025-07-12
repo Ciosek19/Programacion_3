@@ -9,17 +9,28 @@
 
 namespace WebApplication.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Clima
-    {
-        public int Id { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public decimal Temperatura { get; set; }
-        public string Icono { get; set; }
-        public int Humedad { get; set; }
-        public int Viento { get; set; }
-        public string Condicion { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+
+   public partial class Clima
+   {
+      public int Id { get; set; }
+
+      [Required]
+      public System.DateTime Fecha { get; set; }
+
+      [Required]
+      public decimal Temperatura { get; set; }
+
+      [StringLength(maximumLength: 500, ErrorMessage = "Limite de 500 -caracteres")]
+      public string Icono { get; set; }
+
+      [Required]
+      public int Humedad { get; set; }
+      [Required]
+      public int Viento { get; set; }
+      [Required]
+      public string Condicion { get; set; }
+   }
 }

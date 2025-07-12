@@ -9,15 +9,24 @@
 
 namespace WebApplication.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Noticia
-    {
-        public int Id { get; set; }
-        public string Titulo { get; set; }
-        public string Contenido { get; set; }
-        public System.DateTime FechaPublicacion { get; set; }
-        public string Imagen { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+
+   public partial class Noticia
+   {
+      public int Id { get; set; }
+
+      [Required]
+      [StringLength(maximumLength: 100, ErrorMessage = "Limite de 100 caracteres")]
+      public string Titulo { get; set; }
+
+      [StringLength(maximumLength: int.MaxValue, ErrorMessage = "Limite de int.MaxValue caracteres")]
+      public string Contenido { get; set; }
+
+      public System.DateTime FechaPublicacion { get; set; }
+
+      [StringLength(maximumLength: 500, ErrorMessage = "Limite de 500 caracteres")]
+      public string Imagen { get; set; }
+   }
 }

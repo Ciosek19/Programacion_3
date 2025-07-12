@@ -23,12 +23,8 @@
                     @Html.DisplayFor(model => model.Nombre)
                 </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.ImagenUrl)
-                </dt>
-
                 <dd>
-                    @Html.DisplayFor(model => model.ImagenUrl)
+                   <img src="@Url.Content(Model.ImagenUrl)" alt="Imagen del programa" style="width: 70%; margin-bottom: 20px; object-fit:cover; border-radius:5px;" />
                 </dd>
 
                 <dt>

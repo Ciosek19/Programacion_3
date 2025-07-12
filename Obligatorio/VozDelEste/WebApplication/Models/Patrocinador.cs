@@ -9,15 +9,23 @@
 
 namespace WebApplication.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Patrocinador
-    {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public Nullable<int> TransmisionDiaria { get; set; }
-        public string UrlImagen { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+
+   public partial class Patrocinador
+   {
+      public int Id { get; set; }
+
+      [StringLength(maximumLength: 50, ErrorMessage = "Limite de 50 caracteres")]
+      [Required]
+      public string Nombre { get; set; }
+
+      [StringLength(maximumLength: int.MaxValue, ErrorMessage = "Limite de int.MaxValue caracteres")]
+      public string Descripcion { get; set; }
+      public Nullable<int> TransmisionDiaria { get; set; }
+
+      [StringLength(maximumLength: 255, ErrorMessage = "Limite de 255 caracteres")]
+      public string UrlImagen { get; set; }
+   }
 }
