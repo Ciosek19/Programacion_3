@@ -48,7 +48,7 @@
                <li>@Html.ActionLink("Programación", "Home", "Programacion", new { area = "" }, new { @class = "link-nav" })</li>
                <li>@Html.ActionLink("Noticias", "Home", "Noticias", new { area = "" }, new { @class = "link-nav" })</li>
                <li>@Html.ActionLink("Clima", "Home", "Climas", new { area = "" }, new { @class = "link-nav" })</li>
-               <li>@Html.ActionLink("Cotización", "Home", "Cotizacion", new { area = "" }, new { @class = "link-nav" })</li>
+               <li>@Html.ActionLink("Cotización", "Home", "CotizacionMoneda", new { area = "" }, new { @class = "link-nav" })</li>
 
                @if (usuario == null)
                {
@@ -78,6 +78,7 @@
                            <li>@Html.ActionLink("Noticias", "Index", "Noticias")</li>
                            <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
                            <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
+                           <li>@Html.ActionLink("Permisos", "Index", "Permisos")</li>
                            <li>@Html.ActionLink("Patrocinadores", "Index", "Patrocinadores")</li>
                         </ul>
                      }
@@ -85,7 +86,7 @@
                   <li>@Html.ActionLink("Programación", "Home", "Programacion")</li>
                   <li>@Html.ActionLink("Noticias", "Home", "Noticias")</li>
                   <li>@Html.ActionLink("Clima", "Home", "Climas")</li>
-                  <li>@Html.ActionLink("Cotización", "Home", "Cotizacion")</li>
+                  <li>@Html.ActionLink("Cotización", "Home", "CotizacionMoneda")</li>
                   @if (usuario == null)
                   {
                      <li>@Html.ActionLink("Registrarse", "Registro", "Usuarios")</li>
@@ -118,7 +119,7 @@
                      <li>@Html.ActionLink("Programación", "Home", "Programacion")</li>
                      <li>@Html.ActionLink("Noticias", "Home", "Noticias")</li>
                      <li>@Html.ActionLink("Clima", "Home", "Climas")</li>
-                     <li>@Html.ActionLink("Cotización", "Home", "Cotizacion")</li>
+                     <li>@Html.ActionLink("Cotización", "Home", "CotizacionMoneda")</li>
                   </ul>
                </div>
                <div class="footer-columna">

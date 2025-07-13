@@ -1,9 +1,22 @@
 ﻿@model WebApplication.ViewModels.ClimaPronosticoViewModel
 
 @{
-   ViewBag.Title = "View";
+   ViewBag.Title = "Clima";
    Layout = "~/Views/Shared/_Layout.cshtml";
+
+   Func<string, string> ObtenerIcono = condicion =>
+   {
+      var c = condicion.ToLower();
+      if (c.Contains("cielo claro")) return "cielo-claro";
+      if (c.Contains("nubes dispersas") || c.Contains("nubes rotas") || c.Contains("nublado") || c.Contains("muy nublado") || c.Contains("nubes") || c.Contains("muy nuboso")) return "nubes-dispersas";
+      if (c.Contains("lluvia ligera") || c.Contains("lluvia moderada") || c.Contains("llovizna") || c.Contains("lluvia de gran intensidad")) return "lluvia-ligera";
+      if (c.Contains("tormenta eléctrica")) return "electrica-lluvia";
+      if (c.Contains("niebla")) return "niebla";
+      if (c.Contains("nieve ligera")) return "nieve-ligera";
+      return "cielo-claro"; // ícono por defecto
+   };
 }
+
 @section styles {
    <link href="~/Content/clima.css" rel="stylesheet" />
 }
@@ -14,27 +27,69 @@
          <p class="clima-condicion">@Model.ClimaActual.Condicion</p>
          <p class="clima-temperatura">@Model.ClimaActual.Temperatura°C</p>
       </div>
-      <p class="clima-fecha">@Model.ClimaActual.Fecha</p>
+         <img src="@Url.Content($"~/assets/iconos/{ObtenerIcono(Model.ClimaActual.Condicion)}.png")" alt="icono clima" class="clima-icono" />
+      <p class="clima-fecha">@Model.ClimaActual.Fecha.ToString("dd/MM HH:mm")</p>
    </div>
-   <div class="clima-pronosticos">
 
-      @foreach (var clima in Model.Anteriores)
-      {
-         <div class="clima-item">
-            <p class="clima-condicion">@clima.Condicion</p>
-            <p class="clima-temperatura">@clima.Temperatura°C</p>
-            <p class="clima-fecha">@clima.Fecha</p>
-         </div>
-      }
-      @foreach (var clima in Model.Posteriores)
-      {
-         <div class="clima-item">
-            <p class="clima-condicion">@clima.Condicion</p>
-            <p class="clima-temperatura">@clima.Temperatura°C</p>
-            <p class="clima-fecha">@clima.Fecha</p>
-         </div>
-      }
+   <div class="slider-container">
+      <button class="slider-button left" onclick="scrollSlider(-1)">‹</button>
+      <div id="climaSlider" class="slider-track">
+
+         @foreach (var clima in Model.Anteriores)
+         {
+            <div class="clima-item">
+               <p class="clima-dia">@clima.Fecha.ToString("dddd", new System.Globalization.CultureInfo("es-ES"))</p>
+               <p class="clima-fecha">@clima.Fecha.ToString("dd/MM HH:mm")</p>
+               <p class="clima-condicion">@clima.Condicion</p>
+               <p>@clima.Temperatura°C</p>
+               <img src="@Url.Content($"~/Assets/iconos/{ObtenerIcono(clima.Condicion)}.png")" alt="icono clima" class="clima-icono" />
+            </div>
+         }
+
+      <div class="clima-item" style="background:#d1eaff55;">
+         <strong>AHORA</strong>
+         <p class="clima-dia">@Model.ClimaActual.Fecha.ToString("dddd", new System.Globalization.CultureInfo("es-ES"))</p>
+         <p class="clima-fecha">@Model.ClimaActual.Fecha.ToString("dd/MM HH:mm")</p>
+
+         <p class="clima-condicion">@Model.ClimaActual.Condicion</p>
+         <p>@Model.ClimaActual.Temperatura°C</p>
+         <img src="@Url.Content($"~/Assets/iconos/{ObtenerIcono(Model.ClimaActual.Condicion)}.png")" alt="icono clima" class="clima-icono" />
+      </div>
+
+         @foreach (var clima in Model.Posteriores)
+         {
+            <div class="clima-item">
+               <p class="clima-dia">@clima.Fecha.ToString("dddd", new System.Globalization.CultureInfo("es-ES"))</p>
+               <p class="clima-fecha">@clima.Fecha.ToString("dd/MM HH:mm")</p>
+               <p class="clima-condicion">@clima.Condicion</p>
+               <p>@clima.Temperatura°C</p>
+               <img src="@Url.Content($"~/Assets/iconos/{ObtenerIcono(clima.Condicion)}.png")" alt="icono clima" class="clima-icono" />
+            </div>
+         }
+
+      </div>
+      <button class="slider-button right" onclick="scrollSlider(1)">›</button>
    </div>
 </section>
 
+@section scripts {
+   <script>
+      function scrollSlider(direction) {
+         const slider = document.getElementById('climaSlider');
+         const itemWidth = slider.querySelector('.clima-item').offsetWidth + 10; // item + margin
+         slider.scrollBy({
+            left: direction * itemWidth,
+            behavior: 'smooth'
+         });
+      }
 
+      window.onload = function () {
+         const slider = document.getElementById('climaSlider');
+         const climaItems = slider.querySelectorAll('.clima-item');
+         const currentIndex = @Model.Anteriores.Count(); // Index de clima actual
+         const itemWidth = climaItems[0].offsetWidth + 10;
+         const scrollPosition = currentIndex * itemWidth - (slider.offsetWidth / 2) + (itemWidth / 2);
+         slider.scrollLeft = scrollPosition;
+      };
+   </script>
+}

@@ -1,0 +1,169 @@
+﻿@model WebApplication.ViewModels.CotizacionesViewModel
+@using Newtonsoft.Json
+
+@{
+   ViewBag.Title = "Cotización de Monedas";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+
+   // Serializamos el histórico con formato ISO para las fechas
+   var datosJson = JsonConvert.SerializeObject(Model.Historico, new JsonSerializerSettings
+   {
+      DateFormatString = "yyyy-MM-ddTHH:mm:ss"
+   });
+
+   Func<string, string> ObtenerIcono = tipo =>
+   {
+      var t = tipo.ToLower();
+      if (t.Contains("usd")) return "usd";
+      if (t.Contains("eur")) return "eur";
+      if (t.Contains("brl")) return "brl";
+      if (t.Contains("ars")) return "ars";
+      return "moneda";
+   };
+}
+
+@section styles {
+   <link href="~/Content/cotizacion.css" rel="stylesheet" />
+}
+
+<section class="cotizacion-container">
+
+   @foreach (var cotizacion in Model.Historico
+             .GroupBy(c => c.TipoMoneda)
+             .Select(g => g.OrderByDescending(c => c.Fecha).First())
+             .ToList())
+   {
+      <div class="cotizacion-item">
+         <img src="@Url.Content($"~/assets/iconos/{ObtenerIcono(cotizacion.TipoMoneda)}.png")"
+              alt="icono" class="cotizacion-icono" />
+         <div class="cotizacion-info">
+            <p class="cotizacion-moneda">@cotizacion.TipoMoneda</p>
+            <p class="cotizacion-valor">$U @cotizacion.ValorCompra.ToString("0.##")</p>
+            <p class="cotizacion-fecha">@cotizacion.Fecha.ToString("dd/MM/yyyy HH:mm")</p>
+         </div>
+      </div>
+   }
+   <hr style="margin: 30px 0px" />
+   <div id="chart"></div>
+</section>
+@section scripts {
+   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+   <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Tus datos del ViewModel
+            const datos = @Html.Raw(Json.Encode(Model.Historico));
+
+
+            // Agrupar datos por tipo de moneda
+            const datosPorMoneda = {};
+            datos.forEach(d => {
+                // Parsear fecha de /Date(...)/
+                const fechaMs = parseInt(d.Fecha.replace(/\D/g, ''));
+                const fecha = new Date(fechaMs);
+
+                if (!datosPorMoneda[d.TipoMoneda]) {
+                    datosPorMoneda[d.TipoMoneda] = [];
+                }
+
+                datosPorMoneda[d.TipoMoneda].push({
+                    x: fecha,
+                    y: d.ValorCompra
+                });
+            });
+
+            // Crear arrays para series y categorías (fechas)
+            const series = [];
+            // Para asegurar orden cronológico en las fechas
+            let allDates = new Set();
+
+            Object.keys(datosPorMoneda).forEach(moneda => {
+                // Ordenar datos por fecha
+                datosPorMoneda[moneda].sort((a, b) => a.x - b.x);
+
+                // Agregar fechas a conjunto
+                datosPorMoneda[moneda].forEach(punto => allDates.add(punto.x.toISOString().substring(0, 10)));
+
+                // Mapear para ApexCharts (x: fecha, y: valor)
+                series.push({
+                    name: moneda,
+                    data: datosPorMoneda[moneda].map(p => [p.x.getTime(), p.y])
+                });
+            });
+
+            // Convertir conjunto a array y ordenar fechas para el eje X
+            const categorias = Array.from(allDates).sort();
+
+           const options = {
+              chart: {
+                 type: 'line',
+                 height: 400,
+                 foreColor: '#fff',
+                 background: 'transparent', // o '#222' si no usas CSS
+                 toolbar: {
+                    show: true
+                 }
+              },
+              title: {
+                 text: 'Cotizaciones de Monedas',
+                 style: {
+                    fontSize: '24px',
+                    color: '#fff',
+                    fontWeight:'regular',
+                 }
+              },
+              xaxis: {
+                 type: 'datetime',
+                 labels: {
+                    style: {
+                       colors: '#fff',
+                       fontSize: '18px',
+                       fontWeight:'bold'
+                    }
+                 },
+                 
+              },
+              yaxis: {
+                 labels: {
+                    style: {
+                       colors: '#fff',
+                       fontSize: '14px'
+                    }
+                 },
+                 title: {
+                    text: '$U',
+                    style: {
+                       color: '#fff',
+                       fontSize: '32px',
+                       fontWeight: 'bold'
+                    }
+                 }
+              },
+              legend: {
+                 labels: {
+                    colors: '#fff',
+                    fontSize: '16px'
+                 }
+              },
+              tooltip: {
+                 theme: 'dark',
+                 style: {
+                    fontSize: '14px',
+                    color: '#fff'
+                 },
+                 x: {
+                    format: 'dd/MM/yyyy HH:mm'
+                 }
+              },
+              stroke: {
+                 curve: 'smooth'
+              },
+              series: series
+           };
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+        });
+   </script>
+}
+
+
