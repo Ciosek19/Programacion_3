@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\views\\cotizacionmoneda\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\views\\cotizacionmoneda\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|c:\\users\\rodri\\desktop\\cei\\programacion_3\\obligatorio\\vozdeleste\\webapplication\\content\\noticias.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{3C59A952-68BB-4167-AF18-FCB41C897A84}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\content\\noticias.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -43,19 +55,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T17:36:38.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\CotizacionMoneda\\Home.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\CotizacionMoneda\\Home.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\CotizacionMoneda\\Home.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\CotizacionMoneda\\Home.cshtml",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-13T16:05:31.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAD4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-13T15:57:41.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "noticias.css",
               "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Content\\noticias.css",
               "RelativeDocumentMoniker": "WebApplication\\Content\\noticias.css",
               "ToolTip": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Content\\noticias.css",
               "RelativeToolTip": "WebApplication\\Content\\noticias.css",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFoAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-07-13T03:03:45.325Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Home.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\Noticias\\Home.cshtml",
               "RelativeDocumentMoniker": "WebApplication\\Views\\Noticias\\Home.cshtml",
@@ -68,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Home.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\Desktop\\CEI\\Programacion_3\\Obligatorio\\VozDelEste\\WebApplication\\Views\\Programacion\\Home.cshtml",
               "RelativeDocumentMoniker": "WebApplication\\Views\\Programacion\\Home.cshtml",
