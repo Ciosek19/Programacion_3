@@ -65,7 +65,7 @@ namespace WebApplication.Services
          var response = await client.ExecuteAsync(request);
          if (!response.IsSuccessful) return;
 
-         var datos = JsonConvert.DeserializeObject<CurrencyLayerResponse>(response.Content);
+         var datos = JsonConvert.DeserializeObject<CurrencyLayerRespuestaDTO>(response.Content);
          if (datos?.quotes == null || !datos.success) return;
 
          using (var context = new VozDelEsteBDEntities())

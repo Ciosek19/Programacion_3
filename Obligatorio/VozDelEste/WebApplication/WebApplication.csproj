@@ -233,7 +233,7 @@
     <Compile Include="ViewModels\ClimaPronosticoViewModel.cs" />
     <Compile Include="ViewModels\CotizacionesViewModel.cs" />
     <Compile Include="ViewModels\DTO\ClimaWeatherRespuestaDTO.cs" />
-    <Compile Include="ViewModels\DTO\CurrencyLayerResponse.cs" />
+    <Compile Include="ViewModels\DTO\CurrencyLayerRespuestaDTO.cs" />
     <Compile Include="ViewModels\DTO\ClimaForecastRespuestaDTO.cs" />
     <Compile Include="ViewModels\DTO\UsuarioSesion.cs" />
     <Compile Include="ViewModels\HomeIndexViewModel.cs" />
@@ -242,7 +242,7 @@
     <Compile Include="ViewModels\PermisoCheckboxViewModel.cs" />
     <Compile Include="ViewModels\RegistroViewModel.cs" />
     <Compile Include="ViewModels\RolEditViewModel.cs" />
-    <Compile Include="ViewModels\TienePermisoAttribute.cs" />
+    <Compile Include="ViewModels\Validadores\TienePermisoAttribute.cs" />
     <Compile Include="ViewModels\UsuarioEditViewModel.cs" />
     <Compile Include="ViewModels\Validadores\FechaValidador.cs" />
   </ItemGroup>
@@ -271,6 +271,7 @@
     <Content Include="Content\normalize.css" />
     <Content Include="Content\noticias.css" />
     <Content Include="Content\programacion.css" />
+    <Content Include="Content\programasRadios.css" />
     <Content Include="Content\registro.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -371,6 +372,7 @@
     <Content Include="Views\Patrocinadores\Index.cshtml" />
     <Content Include="Views\Climas\Home.cshtml" />
     <Content Include="Views\CotizacionMoneda\Home.cshtml" />
+    <Content Include="Views\ProgramaRadios\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

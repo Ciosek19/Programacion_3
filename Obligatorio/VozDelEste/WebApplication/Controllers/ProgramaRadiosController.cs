@@ -22,6 +22,12 @@ namespace WebApplication.Controllers
          return View(db.ProgramaRadio.ToList());
       }
 
+      // GET: ProgramaRadios
+      public ActionResult Home()
+      {
+         return View(db.ProgramaRadio.ToList());
+      }
+
       // GET: ProgramaRadios/Details/5
       [TienePermiso("Gestion Programas")]
       public ActionResult Details(int? id)

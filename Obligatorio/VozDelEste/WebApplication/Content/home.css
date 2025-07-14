@@ -150,7 +150,7 @@ section h2 {
 
 .boton-expandir {
    display: block;
-   margin: 120px auto 0 auto;
+   margin: 50px auto 0 auto;
    padding: 20px 40px;
    background-color: var(--color-primario);
    color: #fff;
@@ -271,3 +271,41 @@ section h2 {
    .boton-ver-mas:hover {
       background-color: var(--color-secundario);
    }
+
+.seccion-patrocinadores {
+   margin: 60px 0;
+   background-color: transparent;
+   overflow: hidden;
+}
+
+.carrusel-patrocinadores {
+   width: 100%;
+   position: relative;
+}
+
+.carrusel-track {
+   display: flex;
+   animation: scrollCarrusel 30s linear infinite;
+}
+
+.patrocinador-card {
+   min-width: 200px;
+   margin: 10px;
+   text-align: center;
+}
+
+   .patrocinador-card img {
+      max-width: 150px;
+      height: auto;
+      border-radius: 10px;
+   }
+
+@keyframes scrollCarrusel {
+   0% {
+      transform: translateX(0);
+   }
+
+   100% {
+      transform: translateX(-100%);
+   }
+}

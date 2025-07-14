@@ -1,0 +1,38 @@
+﻿:root {
+   --fuente: "Montserrat", sans-serif;
+   --color-primario: #46c6ec;
+   --color-secundario: #eabc95;
+   --color-blanco: #c2d2e581;
+   --color-negro: #1f3147;
+   --color-negroalpha: #1f3147dd;
+}
+
+strong {
+   text-transform:uppercase;
+}
+
+.programas-radios-container {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.fila-programa {
+   display: flex;
+   width: 100%;
+   background-color: var(--color-negroalpha);
+   padding: 15px;
+   border-radius: 8px;
+   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.imagen-programa img {
+   max-width: 200px;
+   height: auto;
+   border-radius: 8px;
+}
+
+.info-programa {
+   flex: 1;
+   margin-left: 20px;
+}

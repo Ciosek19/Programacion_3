@@ -117,4 +117,18 @@
 
       </div>
    </section>
+   <!-- SECCION PATROCINADORES -->
+   <section class="seccion-patrocinadores">
+      <div class="carrusel-patrocinadores">
+         <div class="carrusel-track">
+            @foreach (var item in Model.patrocinadores)
+            {
+               <div class="patrocinador-card">
+                  <img src="@item.UrlImagen" alt="@item.Nombre" title="@item.Nombre" />
+               </div>
+            }
+         </div>
+      </div>
+   </section>
+
 </main>

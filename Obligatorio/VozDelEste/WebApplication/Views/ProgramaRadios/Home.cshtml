@@ -1,0 +1,30 @@
+﻿@model List<WebApplication.Models.ProgramaRadio>
+@{
+   ViewBag.Title = "Home";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+   <link href="~/Content/programasRadios.css" rel="stylesheet" />
+}
+<section class="seccion-programas-radios">
+   <h2 style="margin-bottom: 60px">Programas de Radio</h2>
+   <hr />
+   <div class="programas-radios-container">
+      @foreach (var programa in Model)
+      {
+         <div class="fila-programa">
+            <div class="imagen-programa">
+               <img src="@programa.ImagenUrl" alt="Imagen de @programa.Nombre" />
+            </div>
+            <div class="info-programa">
+               <h3>@programa.Nombre</h3>
+               <p>@programa.Descripcion</p>
+               <p class="conductores"><strong>Conductores:</strong> @string.Join(", ", programa.Conductor.Select(c => c.Persona.Nombre+" "+c.Persona.Apellido))</p>
+               <p><strong>Duración:</strong> @programa.Duracion</p>
+            </div>
+         </div>
+      }
+   </div>
+</section>
+
+

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplication.ViewModels.DTO
 {
-   public class CurrencyLayerResponse
+   public class CurrencyLayerRespuestaDTO
    {
       public bool success { get; set; }
       public long timestamp { get; set; }

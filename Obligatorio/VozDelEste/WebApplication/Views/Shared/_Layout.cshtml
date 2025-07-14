@@ -45,6 +45,7 @@
                      </ul>
                   </li>
                }
+               <li>@Html.ActionLink("Programas", "Home", "ProgramaRadios", new { area = "" }, new { @class = "link-nav" })</li>
                <li>@Html.ActionLink("Programación", "Home", "Programacion", new { area = "" }, new { @class = "link-nav" })</li>
                <li>@Html.ActionLink("Noticias", "Home", "Noticias", new { area = "" }, new { @class = "link-nav" })</li>
                <li>@Html.ActionLink("Clima", "Home", "Climas", new { area = "" }, new { @class = "link-nav" })</li>
@@ -58,7 +59,7 @@
                else
                {
                   <li>@Html.ActionLink("Cerrar Sesión", "Logout", "Usuarios", null, new { @class = "link-nav login" })</li>
-                  <li style="border-bottom:none;"><span class="link-nav" style="color:midnightblue">@usuario.NombreCompleto</span></li>
+                  <li style="border-bottom:none; position:absolute; top:50px;"><span class="link-nav" style="color:midnightblue">Usuario: @usuario.NombreCompleto</span></li>
                }
             </ul>
          </nav>
@@ -83,6 +84,7 @@
                         </ul>
                      }
                   </li>
+                  <li>@Html.ActionLink("Programas", "Home", "ProgramaRadios")</li>
                   <li>@Html.ActionLink("Programación", "Home", "Programacion")</li>
                   <li>@Html.ActionLink("Noticias", "Home", "Noticias")</li>
                   <li>@Html.ActionLink("Clima", "Home", "Climas")</li>
