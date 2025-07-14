@@ -70,10 +70,11 @@
                 @Html.AntiForgeryToken()
                 @Html.Hidden("ProgramaRadioId", Model.Id)
 
-                <div class="form-group">
-                    <label for="Contenido">Comentario</label>
-                    <textarea name="Contenido" class="input-estilo" rows="4" required></textarea>
-                </div>
+        <div class="form-group">
+           <label for="Contenido">Comentario</label>
+           <textarea name="Contenido" class="input-estilo" rows="4" required></textarea>
+           @Html.ValidationMessage("Contenido", "", new { @class = "text-danger" })
+        </div>
 
                 <button type="submit" class="input-btn">Enviar Comentario</button>
             }

@@ -19,8 +19,11 @@
             <div class="info-programa">
                <h3>@programa.Nombre</h3>
                <p>@programa.Descripcion</p>
-               <p class="conductores"><strong>Conductores:</strong> @string.Join(", ", programa.Conductor.Select(c => c.Persona.Nombre+" "+c.Persona.Apellido))</p>
+               <p class="conductores"><strong>Conductores:</strong> @string.Join(", ", programa.Conductor.Select(c => c.Persona.Nombre + " " + c.Persona.Apellido))</p>
                <p><strong>Duración:</strong> @programa.Duracion</p>
+               <a href="@Url.Action("Details", "ProgramaRadios", new { id = programa.Id })" class="btn btn-primary" style="margin-top:10px;">
+                  Agregar comentario
+               </a>
             </div>
          </div>
       }

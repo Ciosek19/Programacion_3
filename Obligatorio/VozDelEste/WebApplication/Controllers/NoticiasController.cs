@@ -95,8 +95,8 @@ namespace WebApplication.Controllers
 
                // Guardar solo la URL relativa
                noticia.Imagen = Url.Content(rutaRelativa);
-               noticia.FechaPublicacion = DateTime.Now;
             }
+               noticia.FechaPublicacion = DateTime.Now;
 
             db.Noticia.Add(noticia);
             db.SaveChanges();

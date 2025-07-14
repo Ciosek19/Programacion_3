@@ -1,42 +1,46 @@
 ﻿@model WebApplication.ViewModels.RolEditViewModel
 
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+   ViewBag.Title = "Create";
+   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section Styles {
-    <link rel="stylesheet" href="~/Content/login.css" />
+   <link rel="stylesheet" href="~/Content/login.css" />
 }
 <div class="formulario-container">
-    <h1>Crear Rol</h1>
-    <hr style="margin-bottom:30px;"/>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+   <h1>Crear Rol</h1>
+   <hr style="margin-bottom:30px;" />
+   @using (Html.BeginForm())
+   {
+      @Html.AntiForgeryToken()
 
-        <div class="form-flex">
-            @Html.TextBoxFor(m => m.Nombre, new { @class = "input-estilo", placeholder="Nombre" })
-            @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+      <div class="form-flex">
+         @Html.TextBoxFor(m => m.Nombre, new { @class = "input-estilo", placeholder = "Nombre" })
+         @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
 
-            <p>Seleccione los permisos:</p>
-            <div>
-                @for (int i = 0; i < Model.Permisos.Count; i++)
-                {
-                    <div>
-                        @Html.HiddenFor(m => m.Permisos[i].IdPermiso)
-                        <label>
-                            @Html.CheckBoxFor(m => m.Permisos[i].Seleccionado)
-                            @Model.Permisos[i].Nombre
-                        </label>
-                    </div>
-                }
-            </div>
+         <p>Seleccione los permisos:</p>
+         <div>
+            @for (int i = 0; i < Model.Permisos.Count; i++)
+            {
+               <div>
+                  @Html.HiddenFor(m => m.Permisos[i].IdPermiso)
+                  <label>
+                     @Html.CheckBoxFor(m => m.Permisos[i].Seleccionado)
+                     @Model.Permisos[i].Nombre
+                  </label>
+               </div>
+            }
+         </div>
 
-            <button type="submit" class="input-btn">Guardar</button>
-        </div>
-    }
+         <button type="submit" class="input-btn">Guardar</button>
+      </div>
+   }
 
-    <div class="volver-contenedor">
-        <a href="@Url.Action("Index")" class="volver">Volver</a>
-    </div>
+   <div class="volver-contenedor">
+      <a href="@Url.Action("Index")" class="volver">Volver</a>
+   </div>
 </div>
+@section Scripts {
+   @Scripts.Render("~/bundles/jquery")
+   @Scripts.Render("~/bundles/jqueryval")
+}

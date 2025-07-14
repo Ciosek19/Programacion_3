@@ -25,6 +25,7 @@ namespace WebApplication.Models
       public int Id { get; set; }
 
       [StringLength(maximumLength: 50, ErrorMessage = "Limite de 50 caracteres")]
+      [Required]
       public string Nombre { get; set; }
 
       [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

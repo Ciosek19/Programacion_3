@@ -1,59 +1,57 @@
 ﻿@model WebApplication.Models.Noticia
 
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+   ViewBag.Title = "Create";
+   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    @section Styles {
-        <link rel="stylesheet" href="~/Content/login.css" />
-    }
+@section Styles {
+   <link rel="stylesheet" href="~/Content/login.css" />
+}
 <div class="formulario-container">
 
-    @using (Html.BeginForm("Create", "Noticias", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        @Html.AntiForgeryToken()
+   @using (Html.BeginForm("Create", "Noticias", FormMethod.Post, new { enctype = "multipart/form-data" }))
+   {
+      @Html.AntiForgeryToken()
 
-        <div class="form-flex">
-            <h4>Noticia</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+      <div class="form-flex">
+         <h4>Noticia</h4>
+         <hr />
+         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+         <div class="">
             <div class="">
-                <div class="">
-                    @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @placeholder = "Titulo", @class = "input-estilo" } })
-                    @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
-                </div>
+               @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @placeholder = "Titulo", @class = "input-estilo" } })
+               @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
             </div>
+         </div>
+         <div class="">
+            @Html.LabelFor(model => model.Contenido, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="">
+               @Html.TextAreaFor(model => model.Contenido, new { @class = "input-estilo", rows = 6, placeholder = "Contenido de la noticia" })
+               @Html.ValidationMessageFor(model => model.Contenido, "", new { @class = "text-danger" })
+            </div>
+         </div>
+         <div class="">
+            @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="">
+               @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "input-estilo", type = "file" } })
+               @Html.ValidationMessageFor(model => model.Imagen, "", new { @type = "archive", @class = "text-danger" })
+            </div>
+         </div>
 
+         <div class="">
             <div class="">
-                @Html.LabelFor(model => model.Contenido, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="">
-                    @Html.TextAreaFor(model => model.Contenido, new { @class = "input-estilo", rows = 5 })
-                    @Html.ValidationMessageFor(model => model.Contenido, "", new { @class = "text-danger" })
-                </div>
+               <input type="submit" value="Create" class="input-btn" />
             </div>
-
-            <div class="">
-                @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="">
-                    @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "input-estilo", type = "file" } })
-                    @Html.ValidationMessageFor(model => model.Imagen, "", new { @type = "archive", @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="">
-                <div class="">
-                    <input type="submit" value="Create" class="input-btn" />
-                </div>
-            </div>
-        </div>
-    }
-    <br />
-    <div>
-        <a href="@Url.Action("Index")" class="volver">Volver</a>
-    </div>
+         </div>
+      </div>
+   }
+   <br />
+   <div>
+      <a href="@Url.Action("Index")" class="volver">Volver</a>
+   </div>
 </div>
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+   @Scripts.Render("~/bundles/jquery")
+   @Scripts.Render("~/bundles/jqueryval")
 }
-

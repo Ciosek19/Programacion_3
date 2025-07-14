@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -68,9 +69,6 @@ namespace WebApplication.Controllers
          return View(viewModel);
       }
 
-      // POST: Roles/Create
-      // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-      // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
       [HttpPost]
       [ValidateAntiForgeryToken]
       [TienePermiso("Gestion Roles")]
@@ -108,11 +106,18 @@ namespace WebApplication.Controllers
          }
 
          db.Rol.Add(nuevoRol);
-         db.SaveChanges();
+         try
+         {
+            db.SaveChanges();
+         }
+         catch (DbEntityValidationException ex)
+         {
+            TempData["Error"] = "Error de validación al crear el rol. Verifique los datos ingresados.";
+            return RedirectToAction("Index");
+         }
 
          return RedirectToAction("Index");
       }
-
 
       // GET: Roles/Edit/5
       [TienePermiso("Gestion Roles")]
@@ -156,7 +161,7 @@ namespace WebApplication.Controllers
             return View(model);
          }
 
-         var rol = db.Rol.Include("Permisos").FirstOrDefault(r => r.Id == model.IdRol);
+         var rol = db.Rol.Include("Permiso").FirstOrDefault(r => r.Id == model.IdRol);
          if (rol == null) return HttpNotFound();
 
          rol.Nombre = model.Nombre;
