@@ -25,6 +25,7 @@ namespace WebApplication.Services
          using (var context = new VozDelEsteBDEntities())
          {
             var ultimo = context.Clima
+               .Where(c => c.Fecha < DateTime.Now)
                 .OrderByDescending(c => c.Fecha)
                 .FirstOrDefault();
 

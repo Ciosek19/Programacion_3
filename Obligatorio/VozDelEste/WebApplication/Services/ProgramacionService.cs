@@ -37,9 +37,9 @@ namespace WebApplication.Services
          var mañana = hoy.AddDays(1);
 
          var programas = _contexto.Programacion
- .Where(p => p.FechaHorario >= hoy && p.FechaHorario < mañana)
- .OrderBy(p => p.FechaHorario)
- .Select(p => new ProgramaDTO
+            .Where(p => p.FechaHorario >= hoy && p.FechaHorario < mañana)
+            .OrderBy(p => p.FechaHorario)
+            .Select(p => new ProgramaDTO
  {
     ProgramacionId = p.Id,
     Duracion = p.ProgramaRadio.Duracion,
